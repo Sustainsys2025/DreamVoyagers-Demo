@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Operations dashboard · DreamVoyagers</title>
+<meta name="description" content="DreamVoyagers operations dashboard (prototype).">
+<meta name="theme-color" content="#0AA493">
+<meta property="og:title" content="Operations dashboard · DreamVoyagers">
+<meta property="og:description" content="DreamVoyagers operations dashboard (prototype).">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="admin" data-root="../">
+<script src="../assets/js/data.js"></script><script src="../assets/js/app.js"></script>
+
+<div class="admin-shell">
+  <aside class="admin-side">
+    <a class="brand" href="../admin/index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 56" height="34" role="img" aria-label="DreamVoyagers">
+  <g transform="translate(2,2)">
+    <circle cx="26" cy="26" r="26" fill="#5FD3C4"/>
+    <path d="M10 33c10-2 20-10 31-20" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M41 13l-6 13-5-5-6 2z" fill="#fff"/>
+    <path d="M9 40c8 0 14-4 20-6" stroke="#F4B942" stroke-width="3" fill="none" stroke-linecap="round" opacity=".95"/>
+  </g>
+  <text x="66" y="37" font-family="Bricolage Grotesque, Rubik, Arial, sans-serif" font-size="27" font-weight="700" fill="#FFFFFF" letter-spacing="-0.5">Dream<tspan fill="#5FD3C4">Voyagers</tspan></text>
+</svg></a>
+    <nav><a href="../admin/index.html" class="active"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg> Dashboard</a><a href="../admin/index.html?view=arrivals" class=""><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16l20-7-9 9-2-5-5-2zm9 2 2 5 4-9"/></svg> Upcoming arrivals</a><a href="../admin/index.html?view=packages" class=""><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12 12 20 3 11V4h7z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg> Packages</a><a href="../admin/index.html?view=enquiries" class=""><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> Enquiries</a><a href="../index.html" target="_blank"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg> View website</a><a href="../admin/login.html" id="logout"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 17l5-5-5-5M15 12H3M21 4v16"/></svg> Sign out</a></nav>
+    <p class="small mt-4" style="color:#8FA0BA">Signed in as <b style="color:#fff">Sarneela</b><br>Operations · prototype</p>
+  </aside>
+  <main class="admin-main">
+<div class="admin-head"><div><h1 id="ad-title">Dashboard</h1><p class="muted small mb-0" id="ad-sub">Bookings, arrivals and payments at a glance.</p></div>
+  <div class="flex"><button class="btn btn-outline btn-sm" id="reset">Reset demo data</button><a class="btn btn-teal btn-sm" href="../book.html" target="_blank">New booking (website)</a></div></div>
+<div class="kpis" id="kpis"></div>
+<div class="panel" id="main-panel">
+  <div class="toolbar"><input id="q" placeholder="Search name, email, reference, flight…"><select id="fs"><option value="">All statuses</option></select><select id="fp"><option value="">All packages</option></select></div>
+  <div class="table-wrap"><table class="data"><thead><tr><th>Reference</th><th>Traveller</th><th>Package</th><th>Arrival</th><th>Flight</th><th>Status</th><th>Payment</th><th>Total</th></tr></thead><tbody id="rows"></tbody></table></div>
+  <p class="small muted mt-2" id="count"></p>
+</div>
+<script>
+(function(){ const $=DV.$, view=DV.qs('view')||'bookings';
+  DV.statuses.forEach(([v,l])=>{ const o=document.createElement('option'); o.value=v; o.textContent=l; $('#fs').appendChild(o); });
+  DV.packages.forEach(p=>{ const o=document.createElement('option'); o.value=p.id; o.textContent=p.name; $('#fp').appendChild(o); });
+  if(view==='arrivals'){ $('#ad-title').textContent='Upcoming arrivals'; $('#ad-sub').textContent='Paid bookings sorted by arrival date.'; }
+  if(view==='packages'){ $('#ad-title').textContent='Packages'; $('#ad-sub').textContent='Edit names, prices and inclusions (prototype: read-only list).'; $('#main-panel').innerHTML='<div class="table-wrap"><table class="data"><thead><tr><th>Package</th><th>Price</th><th>Days</th><th>Inclusions</th><th>Active</th></tr></thead><tbody>'+DV.packages.map(p=>`<tr><td><b>${p.name}</b></td><td>${DV.money(p.price)}</td><td>${p.days}</td><td class="small">${p.includes.join(' · ')}</td><td><span class="badge s-paid">Active</span></td></tr>`).join('')+'</tbody></table></div><p class="small muted mt-2">In the MVP, administrators edit these in place; the website and Stripe amount update automatically.</p>'; $('#kpis').hidden=true; return; }
+  if(view==='enquiries'){ $('#ad-title').textContent='Enquiries'; $('#ad-sub').textContent='Questions from the contact form.'; $('#main-panel').innerHTML='<div class="table-wrap"><table class="data"><thead><tr><th>Received</th><th>Name</th><th>From</th><th>Message</th><th>Handled</th></tr></thead><tbody><tr><td>28 Oct, 09:14</td><td>Priya Nair</td><td>India</td><td class="small">My daughter arrives 12 Jan for AUT. Is the 7-Day Starter enough if she has a homestay already?</td><td><span class="badge s-paid">Replied</span></td></tr><tr><td>29 Oct, 21:40</td><td>Carlos Reyes</td><td>Philippines</td><td class="small">Do you cover Christchurch?</td><td><span class="badge s-pending_payment">Open</span></td></tr></tbody></table></div>'; $('#kpis').hidden=true; return; }
+  function render(){ let list=DV.store.all(); const q=($('#q').value||'').toLowerCase(), fs=$('#fs').value, fp=$('#fp').value;
+    if(view==='arrivals') list=list.filter(b=>!['pending_payment','expired','cancelled','completed'].includes(b.status)).sort((a,b)=>a.arrival.date.localeCompare(b.arrival.date)); else list=list.sort((a,b)=>b.created.localeCompare(a.created));
+    list=list.filter(b=>(!fs||b.status===fs)&&(!fp||b.pkg===fp)&&(!q||[b.ref,b.traveller.name,b.booker.name,b.booker.email,b.arrival.flight].join(' ').toLowerCase().includes(q)));
+    const all=DV.store.all(); const paid=all.filter(b=>b.payment.status==='succeeded'); const up=all.filter(b=>['paid','in_progress','services_confirmed','ready_for_arrival'].includes(b.status));
+    $('#kpis').innerHTML=[[up.length,'Upcoming arrivals'],[all.filter(b=>b.status==='paid').length,'Paid, not yet started'],[all.filter(b=>b.status==='pending_payment').length,'Pending payment'],[DV.money(paid.reduce((s,b)=>s+b.total,0)),'Taken this period']].map(([n,l])=>`<div class="kpi"><div class="n">${n}</div><div class="l">${l}</div></div>`).join('');
+    $('#rows').innerHTML=list.map(b=>`<tr><td><a href="booking.html?ref=${b.ref}">${b.ref}</a></td><td>${b.traveller.name}<br><span class="small muted">${b.traveller.nationality}${b.booker.sameAsTraveller?'':' · booked by '+b.booker.name}</span></td><td>${DV.pkg(b.pkg).name}${b.addons.length?'<br><span class="small muted">+ '+b.addons.map(a=>DV.addon(a).name).join(', ')+'</span>':''}</td><td>${DV.fmtDate(b.arrival.date)}</td><td>${b.arrival.flight}</td><td><span class="badge s-${b.status}">${DV.statusLabel(b.status)}</span></td><td>${b.payment.status==='succeeded'?'<span class="small">'+b.payment.method+'</span>':'<span class="small muted">'+b.payment.status+'</span>'}</td><td><b>${DV.money(b.total)}</b></td></tr>`).join('')||'<tr><td colspan="8" class="muted">No bookings match.</td></tr>';
+    $('#count').textContent=list.length+' booking'+(list.length===1?'':'s'); }
+  ['input','change'].forEach(ev=>['q','fs','fp'].forEach(id=>$('#'+id).addEventListener(ev,render))); render();
+  $('#reset').addEventListener('click',()=>{ if(confirm('Reset all demo bookings to the seed data?')){ DV.store.reset(); render(); DV.toast('Demo data reset'); } });
+})();
+</script></main>
+</div>
+<script>if(sessionStorage.getItem('dv_admin')!=='1') location.replace('login.html'); document.getElementById('logout').addEventListener('click',()=>sessionStorage.removeItem('dv_admin'));</script>
+</body></html>

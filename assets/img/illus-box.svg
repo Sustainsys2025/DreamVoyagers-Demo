@@ -1,0 +1,8 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect width="400" height="300" fill="#FFF4DD"/>
+  <path d="M100 120 l100-50 100 50 v110 l-100 50 -100-50z" fill="#E8B04A"/><path d="M100 120 l100 50 100-50M200 170v110" stroke="#C98A2B" stroke-width="4" fill="none"/>
+  <path d="M100 120 l100-50 100 50 -100 50z" fill="#F4C96B"/>
+  <path d="M150 95 l100-50 50 25 -100 50z" fill="#F7D98C" opacity=".9"/>
+  <g><rect x="150" y="30" width="26" height="60" rx="4" fill="#0AA493"/><circle cx="240" cy="55" r="22" fill="#3D60AC"/><rect x="190" y="40" width="40" height="26" rx="4" fill="#E8613F"/></g>
+  <text x="200" y="215" text-anchor="middle" font-family="Bricolage Grotesque,Rubik,Arial" font-size="20" font-weight="700" fill="#142A4F">Kia ora!</text>
+</svg>

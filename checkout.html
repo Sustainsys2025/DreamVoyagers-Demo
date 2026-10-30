@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Secure checkout · DreamVoyagers</title>
+<meta name="description" content="Demo checkout page simulating Stripe Checkout.">
+<meta name="theme-color" content="#0AA493">
+<meta property="og:title" content="Secure checkout · DreamVoyagers">
+<meta property="og:description" content="Demo checkout page simulating Stripe Checkout.">
+<link rel="icon" href="./assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body class="checkout" data-root="./">
+<script src="./assets/js/data.js"></script><script src="./assets/js/app.js"></script>
+
+<div class="co-wrap">
+  <aside class="co-left">
+    <a class="back" href="book.html"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Back to booking</a>
+    <p class="mt-3" style="color:#B7C4D9;margin-bottom:0">Pay DreamVoyagers</p>
+    <div class="amount" id="co-amount">NZ$—</div>
+    <div id="co-items"></div>
+    <p class="small mt-4" style="color:#8FA0BA">Booking reference <b id="co-ref" style="color:#fff">—</b>. Your booking is held as “pending payment” until Stripe confirms the payment.</p>
+    <div style="margin-top:3rem"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 56" height="34" role="img" aria-label="DreamVoyagers">
+  <g transform="translate(2,2)">
+    <circle cx="26" cy="26" r="26" fill="#5FD3C4"/>
+    <path d="M10 33c10-2 20-10 31-20" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M41 13l-6 13-5-5-6 2z" fill="#fff"/>
+    <path d="M9 40c8 0 14-4 20-6" stroke="#F4B942" stroke-width="3" fill="none" stroke-linecap="round" opacity=".95"/>
+  </g>
+  <text x="66" y="37" font-family="Bricolage Grotesque, Rubik, Arial, sans-serif" font-size="27" font-weight="700" fill="#FFFFFF" letter-spacing="-0.5">Dream<tspan fill="#5FD3C4">Voyagers</tspan></text>
+</svg></div>
+  </aside>
+  <main class="co-right">
+    <div class="co-form">
+      <div class="testcard"><b>Prototype checkout.</b> This page simulates Stripe's hosted Checkout — no money moves. Use card <code>4242 4242 4242 4242</code>, any future expiry, any CVC. Use <code>4000 0000 0000 0002</code> to simulate a declined card.</div>
+      <form id="co" novalidate>
+        <div class="field"><label for="c-email">Email</label><input id="c-email" type="email" required></div>
+        <div class="field"><label>Card information</label>
+          <input id="c-num" inputmode="numeric" placeholder="1234 1234 1234 1234" required style="border-radius:8px 8px 0 0">
+          <div class="card-row"><input id="c-exp" placeholder="MM / YY" required><input id="c-cvc" placeholder="CVC" required></div>
+          <span class="err">Check the card details.</span></div>
+        <div class="field"><label for="c-name">Name on card</label><input id="c-name" required></div>
+        <div class="field"><label for="c-country">Country or region</label><select id="c-country"><option>India</option><option>China</option><option>Philippines</option><option>Vietnam</option><option>South Korea</option><option>Japan</option><option>New Zealand</option><option>Other</option></select></div>
+        <button class="pay-btn" type="submit" id="co-pay">Pay <span id="co-pay-amt"></span></button>
+        <p class="co-footer"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Powered by <b>stripe</b> (simulated) · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a><br>Card details are entered on Stripe's page in the live product and never touch DreamVoyagers' servers.</p>
+        <p class="center small"><a href="payment-cancelled.html?ref=" id="co-cancel">Cancel and return</a></p>
+      </form>
+    </div>
+  </main>
+</div>
+<script>
+(function(){ const ref=DV.qs('ref'); const b=DV.store.get(ref); if(!b){ document.querySelector('.co-form').innerHTML='<div class="alert alert-warn">Booking not found. <a href="book.html">Start a booking</a>.</div>'; return; }
+  const p=DV.pkg(b.pkg); document.getElementById('co-ref').textContent=b.ref; document.getElementById('co-cancel').href='payment-cancelled.html?ref='+b.ref;
+  document.getElementById('co-amount').textContent=DV.money(b.total); document.getElementById('co-pay-amt').textContent=DV.money(b.total);
+  document.getElementById('co-items').innerHTML=`<div class="item"><span>${p.name}<small>${p.days} · ${b.traveller.name}</small></span><span>${DV.money(p.price)}</span></div>`+b.addons.map(a=>{const x=DV.addon(a);return `<div class="item"><span>${x.name}</span><span>${DV.money(x.price)}</span></div>`}).join('')+`<div class="item"><span>Total due (incl. GST)</span><b>${DV.money(b.total)}</b></div>`;
+  document.getElementById('c-email').value=b.booker.email; document.getElementById('c-name').value=b.booker.name;
+  document.getElementById('c-num').addEventListener('input', e=>{ e.target.value=e.target.value.replace(/\D/g,'').slice(0,16).replace(/(.{4})/g,'$1 ').trim(); });
+  document.getElementById('co').addEventListener('submit', e=>{ e.preventDefault(); const num=document.getElementById('c-num').value.replace(/\s/g,''); const fd=document.getElementById('c-num').closest('.field');
+    if(num.length<16 || !document.getElementById('c-exp').value || !document.getElementById('c-cvc').value){ fd.classList.add('error'); return; } fd.classList.remove('error');
+    const btn=document.getElementById('co-pay'); btn.disabled=true; btn.textContent='Processing…';
+    setTimeout(()=>{ if(num==='4000000000000002'){ btn.disabled=false; btn.innerHTML='Pay '+DV.money(b.total); fd.classList.add('error'); fd.querySelector('.err').textContent='Your card was declined. Try another card — your booking is still held.'; return; }
+      // In production this transition happens server-side on Stripe's verified webhook, never from the browser.
+      b.payment={status:'succeeded', id:'pi_demo_'+Math.random().toString(36).slice(2,8), method:(num.startsWith('4')?'Visa':'Mastercard')+' •••• '+num.slice(-4), paidAt:new Date().toISOString()};
+      DV.setStatus(b,'paid','system','Payment confirmation'); b.emails.push([new Date().toISOString(),'Welcome & next steps']); DV.store.put(b);
+      location.href='booking-confirmed.html?ref='+encodeURIComponent(b.ref); }, 1400); });
+})();
+</script>
+</body></html>

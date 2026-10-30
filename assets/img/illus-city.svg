@@ -1,0 +1,7 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect width="400" height="300" fill="#E3F4F1"/><circle cx="80" cy="60" r="28" fill="#F4B942"/>
+  <g fill="#3D60AC"><rect x="40" y="150" width="40" height="90"/><rect x="90" y="120" width="30" height="120"/><rect x="130" y="160" width="50" height="80"/><rect x="260" y="140" width="36" height="100"/><rect x="306" y="110" width="26" height="130"/><rect x="342" y="150" width="40" height="90"/></g>
+  <g fill="#142A4F"><rect x="208" y="30" width="6" height="210"/><rect x="198" y="60" width="26" height="12" rx="3"/><rect x="194" y="72" width="34" height="18" rx="4"/><rect x="202" y="90" width="18" height="150"/></g>
+  <path d="M0 240 H400 V300 H0z" fill="#9ED5CB"/><path d="M0 262 Q50 256 100 262 T200 262 T300 262 T400 262" stroke="#fff" stroke-width="3" fill="none"/>
+  <rect x="120" y="225" width="90" height="34" rx="8" fill="#E8613F"/><circle cx="140" cy="262" r="8" fill="#142A4F"/><circle cx="190" cy="262" r="8" fill="#142A4F"/><rect x="130" y="231" width="70" height="14" rx="3" fill="#fff"/>
+</svg>

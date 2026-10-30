@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Team sign in · DreamVoyagers</title>
+<meta name="description" content="DreamVoyagers operations sign in (prototype).">
+<meta name="theme-color" content="#0AA493">
+<meta property="og:title" content="Team sign in · DreamVoyagers">
+<meta property="og:description" content="DreamVoyagers operations sign in (prototype).">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="admin" data-root="../">
+<script src="../assets/js/data.js"></script><script src="../assets/js/app.js"></script>
+
+<div class="login-wrap"><div class="login-card">
+  <div class="center mb-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 56" height="40" role="img" aria-label="DreamVoyagers">
+  <g transform="translate(2,2)">
+    <circle cx="26" cy="26" r="26" fill="#0AA493"/>
+    <path d="M10 33c10-2 20-10 31-20" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M41 13l-6 13-5-5-6 2z" fill="#fff"/>
+    <path d="M9 40c8 0 14-4 20-6" stroke="#F4B942" stroke-width="3" fill="none" stroke-linecap="round" opacity=".95"/>
+  </g>
+  <text x="66" y="37" font-family="Bricolage Grotesque, Rubik, Arial, sans-serif" font-size="27" font-weight="700" fill="#142A4F" letter-spacing="-0.5">Dream<tspan fill="#0AA493">Voyagers</tspan></text>
+</svg></div>
+  <h1 style="font-size:1.5rem" class="center">Operations sign in</h1>
+  <p class="center muted small">Prototype — any email and password signs you in. In production: individual logins, hashed passwords and optional two-factor authentication.</p>
+  <form id="login">
+    <div class="field"><label for="l-email">Email</label><input id="l-email" type="email" value="sarneela@dreamvoyagers.co.nz"></div>
+    <div class="field"><label for="l-pass">Password</label><input id="l-pass" type="password" value="demo-password"></div>
+    <button class="btn btn-teal btn-block" type="submit">Sign in</button>
+  </form>
+  <p class="center small mt-3"><a href="../index.html">Back to website</a></p>
+</div></div>
+<script>document.getElementById('login').addEventListener('submit',e=>{e.preventDefault(); sessionStorage.setItem('dv_admin','1'); location.href='index.html';});</script>
+</body></html>

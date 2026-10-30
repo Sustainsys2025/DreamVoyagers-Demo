@@ -1,0 +1,8 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect width="400" height="300" fill="#F3F1EC"/>
+  <rect x="40" y="40" width="120" height="90" rx="6" fill="#C9EAE4"/><path d="M40 85h120M100 40v90" stroke="#fff" stroke-width="4"/>
+  <rect x="60" y="170" width="280" height="24" rx="6" fill="#3D60AC"/><rect x="70" y="194" width="14" height="60" fill="#3D60AC"/><rect x="316" y="194" width="14" height="60" fill="#3D60AC"/>
+  <rect x="80" y="150" width="60" height="22" rx="8" fill="#fff"/><rect x="60" y="160" width="280" height="14" rx="4" fill="#0AA493"/>
+  <rect x="230" y="60" width="110" height="90" rx="6" fill="#fff"/><rect x="244" y="76" width="82" height="10" rx="3" fill="#E3F4F1"/><rect x="244" y="94" width="60" height="10" rx="3" fill="#E3F4F1"/><circle cx="310" cy="128" r="10" fill="#F4B942"/>
+  <rect x="290" y="210" width="50" height="60" rx="4" fill="#E8613F"/><text x="315" y="246" text-anchor="middle" font-family="Rubik,Arial" font-size="11" font-weight="600" fill="#fff">WELCOME</text>
+</svg>

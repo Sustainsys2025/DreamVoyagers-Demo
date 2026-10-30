@@ -1,0 +1,9 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect width="400" height="300" fill="#E3F4F1"/>
+  <circle cx="320" cy="70" r="34" fill="#F4B942" opacity=".9"/>
+  <path d="M0 210 C80 190 140 200 200 196 S320 180 400 192 V300 H0z" fill="#C9EAE4"/>
+  <path d="M0 240 H400 V300 H0z" fill="#9ED5CB"/>
+  <path d="M40 255 h320" stroke="#fff" stroke-width="3" stroke-dasharray="18 14"/>
+  <g transform="translate(60,70) rotate(-12)"><path d="M0 40 L160 20 L200 0 L190 30 L170 44 L190 60 L180 70 L150 52 L60 60 L30 90 L20 84 L34 56 L0 48z" fill="#3D60AC"/><circle cx="180" cy="34" r="4" fill="#fff"/></g>
+  <g transform="translate(250,160)"><rect x="0" y="40" width="70" height="90" rx="6" fill="#142A4F"/><rect x="8" y="48" width="54" height="40" rx="3" fill="#fff"/><text x="35" y="75" text-anchor="middle" font-family="Rubik,Arial" font-size="13" font-weight="600" fill="#142A4F">AARAV</text><circle cx="35" cy="24" r="14" fill="#E8613F"/></g>
+</svg>

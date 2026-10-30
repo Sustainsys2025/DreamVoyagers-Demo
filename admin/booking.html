@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Booking detail · DreamVoyagers</title>
+<meta name="description" content="DreamVoyagers operations dashboard (prototype).">
+<meta name="theme-color" content="#0AA493">
+<meta property="og:title" content="Booking detail · DreamVoyagers">
+<meta property="og:description" content="DreamVoyagers operations dashboard (prototype).">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="admin" data-root="../">
+<script src="../assets/js/data.js"></script><script src="../assets/js/app.js"></script>
+
+<div class="admin-shell">
+  <aside class="admin-side">
+    <a class="brand" href="../admin/index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 56" height="34" role="img" aria-label="DreamVoyagers">
+  <g transform="translate(2,2)">
+    <circle cx="26" cy="26" r="26" fill="#5FD3C4"/>
+    <path d="M10 33c10-2 20-10 31-20" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M41 13l-6 13-5-5-6 2z" fill="#fff"/>
+    <path d="M9 40c8 0 14-4 20-6" stroke="#F4B942" stroke-width="3" fill="none" stroke-linecap="round" opacity=".95"/>
+  </g>
+  <text x="66" y="37" font-family="Bricolage Grotesque, Rubik, Arial, sans-serif" font-size="27" font-weight="700" fill="#FFFFFF" letter-spacing="-0.5">Dream<tspan fill="#5FD3C4">Voyagers</tspan></text>
+</svg></a>
+    <nav><a href="../admin/index.html" class=""><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg> Dashboard</a><a href="../admin/index.html?view=arrivals" class=""><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16l20-7-9 9-2-5-5-2zm9 2 2 5 4-9"/></svg> Upcoming arrivals</a><a href="../admin/index.html?view=packages" class=""><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12 12 20 3 11V4h7z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg> Packages</a><a href="../admin/index.html?view=enquiries" class=""><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> Enquiries</a><a href="../index.html" target="_blank"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg> View website</a><a href="../admin/login.html" id="logout"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 17l5-5-5-5M15 12H3M21 4v16"/></svg> Sign out</a></nav>
+    <p class="small mt-4" style="color:#8FA0BA">Signed in as <b style="color:#fff">Sarneela</b><br>Operations · prototype</p>
+  </aside>
+  <main class="admin-main">
+<p class="small"><a href="index.html"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> All bookings</a></p>
+<div class="admin-head"><div><h1 id="bk-title">Booking</h1><p class="muted small mb-0" id="bk-sub"></p></div><div id="bk-badge"></div></div>
+<div class="detail-grid">
+  <div>
+    <div class="panel"><h3>Traveller &amp; arrival</h3><dl class="kv" id="bk-trav"></dl></div>
+    <div class="panel"><h3>Booker</h3><dl class="kv" id="bk-booker"></dl></div>
+    <div class="panel"><h3>Internal notes <span class="muted small">(never visible to the customer)</span></h3>
+      <div id="bk-notes"></div>
+      <div class="field mt-2"><textarea id="note-text" rows="2" placeholder="e.g. Room confirmed at UniLodge, check-in 2pm"></textarea></div>
+      <button class="btn btn-outline btn-sm" id="note-add">Add note</button></div>
+    <div class="panel"><h3>History</h3><ul class="hist" id="bk-hist"></ul></div>
+  </div>
+  <div>
+    <div class="panel"><h3>Payment</h3><dl class="kv" id="bk-pay" style="grid-template-columns:110px 1fr"></dl>
+      <p class="small muted mt-2">Refunds are actioned in the Stripe dashboard; the record here updates from Stripe's notification.</p>
+      <div class="flex"><a class="btn btn-outline btn-sm" href="#" onclick="DV.toast('Opens the payment in Stripe (prototype)');return false;">Open in Stripe</a><button class="btn btn-ghost btn-sm" id="refund">Mark refunded &amp; cancel</button></div></div>
+    <div class="panel"><h3>Update status</h3>
+      <div class="field"><select id="st"></select></div>
+      <label class="check mb-2"><input type="checkbox" id="notify" checked><span>Email the customer about this update</span></label>
+      <button class="btn btn-teal btn-block" id="st-save">Save status</button></div>
+    <div class="panel"><h3>Service milestones</h3><div class="milestones" id="ms"></div></div>
+    <div class="panel"><h3>Emails sent</h3><ul class="hist" id="bk-emails"></ul></div>
+  </div>
+</div>
+<script>
+(function(){ const $=DV.$; const b=DV.store.get(DV.qs('ref')); if(!b){ document.querySelector('.admin-main').innerHTML='<div class="alert alert-warn">Booking not found. <a href="index.html">Back</a></div>'; return; } const p=DV.pkg(b.pkg);
+  function render(){ $('#bk-title').textContent=b.ref+' · '+b.traveller.name; $('#bk-sub').textContent=p.name+(b.addons.length?' + '+b.addons.map(a=>DV.addon(a).name).join(', '):'')+' · created '+DV.fmtDateTime(b.created); $('#bk-badge').innerHTML=`<span class="badge s-${b.status}" style="font-size:.95rem">${DV.statusLabel(b.status)}</span>`;
+    const t=b.traveller,a=b.arrival; $('#bk-trav').innerHTML=`<dt>Name</dt><dd><b>${t.name}</b></dd><dt>Nationality</dt><dd>${t.nationality}</dd><dt>Date of birth</dt><dd>${DV.fmtDate(t.dob)}</dd><dt>Email / phone</dt><dd>${t.email}<br>${t.phone}</dd><dt>Institution</dt><dd>${t.institution||'—'}</dd><dt>Food</dt><dd>${t.diet}</dd><dt>Access needs</dt><dd>${t.access||'—'}</dd><dt>Arrival</dt><dd><b>${DV.fmtDate(a.date,{weekday:'short',day:'numeric',month:'short',year:'numeric'})}</b> · ${a.flight} ${a.time?'· '+a.time:''} · ${a.airport}</dd><dt>Customer notes</dt><dd>${a.notes||'—'}</dd>`;
+    const k=b.booker; $('#bk-booker').innerHTML=`<dt>Name</dt><dd>${k.name} ${k.sameAsTraveller?'<span class="muted small">(is the traveller)</span>':''}</dd><dt>Email / phone</dt><dd>${k.email}<br>${k.phone}</dd><dt>Country</dt><dd>${k.country}</dd><dt>WhatsApp</dt><dd><a href="${DV.wa('Hi '+k.name.split(' ')[0]+', this is DreamVoyagers about booking '+b.ref+'. ')}" target="_blank">Open chat</a></dd>`;
+    $('#bk-pay').innerHTML=`<dt>Status</dt><dd><b>${b.payment.status}</b></dd><dt>Amount</dt><dd>${DV.money(b.total)} NZD</dd><dt>Method</dt><dd>${b.payment.method||'—'}</dd><dt>Stripe ref</dt><dd><code class="small">${b.payment.id}</code></dd><dt>Paid at</dt><dd>${DV.fmtDateTime(b.payment.paidAt)}</dd>`;
+    $('#bk-notes').innerHTML=(b.notes||[]).slice().reverse().map(([d,who,txt])=>`<div class="note">${txt}<small>${who} · ${DV.fmtDateTime(d)}</small></div>`).join('')||'<p class="muted small">No notes yet.</p>';
+    $('#bk-hist').innerHTML=(b.history||[]).slice().reverse().map(([d,s,who])=>`<li><span><span class="badge s-${s}">${DV.statusLabel(s)}</span></span><span class="muted small">${who} · ${DV.fmtDateTime(d)}</span></li>`).join('');
+    $('#bk-emails').innerHTML=(b.emails||[]).slice().reverse().map(([d,t])=>`<li><span>${t}</span><span class="muted small">${DV.fmtDateTime(d)}</span></li>`).join('')||'<li class="muted small">None yet.</li>';
+    $('#st').innerHTML=DV.statuses.map(([v,l])=>`<option value="${v}" ${v===b.status?'selected':''}>${l}</option>`).join('');
+    $('#ms').innerHTML=DV.milestones.map(([k,l])=>`<label><input type="checkbox" data-ms="${k}" ${b.milestones&&b.milestones[k]?'checked':''}>${l}</label>`).join(''); }
+  render();
+  $('#st-save').addEventListener('click',()=>{ const s=$('#st').value; const notify=$('#notify').checked; const label={paid:'Payment confirmation',in_progress:'We\u2019re arranging your services',services_confirmed:'Services confirmed',ready_for_arrival:'Pre-arrival instructions',arrived:'Welcome to Auckland',completed:'How did we do?',cancelled:'Cancellation confirmation'}[s]; DV.setStatus(b,s,'Sarneela',notify&&label?label:null); DV.store.put(b); render(); DV.toast('Status saved'+(notify&&label?' — email queued: '+label:'')); });
+  $('#note-add').addEventListener('click',()=>{ const t=$('#note-text').value.trim(); if(!t) return; b.notes=b.notes||[]; b.notes.push([new Date().toISOString(),'Sarneela',t]); DV.store.put(b); $('#note-text').value=''; render(); DV.toast('Note added'); });
+  $('#ms').addEventListener('change',e=>{ const k=e.target.dataset.ms; if(!k) return; b.milestones=b.milestones||{}; b.milestones[k]=e.target.checked; DV.store.put(b); DV.toast(e.target.checked?'Milestone recorded':'Milestone cleared'); });
+  $('#refund').addEventListener('click',()=>{ if(!confirm('Mark this payment as refunded in full and cancel the booking?')) return; b.payment.status='refunded'; DV.setStatus(b,'cancelled','Sarneela','Cancellation confirmation'); DV.store.put(b); render(); });
+})();
+</script></main>
+</div>
+<script>if(sessionStorage.getItem('dv_admin')!=='1') location.replace('login.html'); document.getElementById('logout').addEventListener('click',()=>sessionStorage.removeItem('dv_admin'));</script>
+</body></html>
