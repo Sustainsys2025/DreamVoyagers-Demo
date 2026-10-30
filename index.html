@@ -4,631 +4,222 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Your first week in New Zealand, taken care of · DreamVoyagers</title>
-<meta name="description" content="Airport pickup, accommodation, SIM, food and bank/IRD assistance for international students and migrants arriving in Auckland. Book before you fly.">
+<meta name="description" content="Airport pickup, accommodation, SIM, food and bank/IRD assistance for students, professionals and families arriving in Auckland from India. Book before you fly.">
 <meta name="theme-color" content="#0AA493">
-<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&amp;family=Rubik:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet">
-<style>
-body{margin:0;background:#FBFBF9}
-a{color:#3D60AC}a:hover{color:#22407A}
-.dv-nav-links{display:flex;gap:4px;align-items:center}
-.dv-nav-links a{text-decoration:none;color:#1E2B3A;padding:10px 14px;border-radius:999px;font-weight:500;font-size:15px}
-.dv-nav-links a:hover{background:#E3F4F1;color:#087F72}
-.dv-wrap{width:min(1200px,100% - 48px);margin:0 auto}
-.dv-hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:center}
-.dv-wk{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px}
-.dv-pk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
-.dv-aud{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
-.dv-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
-.dv-trust{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
-.dv-foot{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
-.dv-pill{border:1.5px solid #DEE3EA;background:#fff;border-radius:999px;padding:10px 16px;font:500 14px Rubik,system-ui,sans-serif;color:#1E2B3A;cursor:pointer;display:inline-flex;gap:8px;align-items:center;min-height:44px}
-.dv-pill:hover{border-color:#0AA493}
-.dv-pill[aria-pressed="true"]{background:#142A4F;border-color:#142A4F;color:#fff}
-.dv-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 24px;border-radius:999px;font:500 16px Rubik,system-ui,sans-serif;text-decoration:none;border:1.5px solid transparent;cursor:pointer}
-.dv-btn-coral{background:#E8613F;color:#fff}.dv-btn-coral:hover{background:#C94D2E;color:#fff}
-.dv-btn-outline{background:transparent;color:#142A4F;border-color:#142A4F}.dv-btn-outline:hover{background:#142A4F;color:#fff}
-.dv-btn-light{background:#fff;color:#142A4F}.dv-btn-light:hover{background:#E3F4F1;color:#142A4F}
-.dv-btn-teal{background:#0AA493;color:#fff}.dv-btn-teal:hover{background:#087F72;color:#fff}
-.dv-card{transition:transform .15s}.dv-card:hover{transform:translateY(-3px)}
-@media (max-width:1000px){.dv-hero,.dv-split{grid-template-columns:minmax(0,1fr)}.dv-wk{grid-template-columns:repeat(4,minmax(0,1fr))}.dv-pk,.dv-trust{grid-template-columns:repeat(2,minmax(0,1fr))}.dv-aud{grid-template-columns:repeat(2,minmax(0,1fr))}.dv-foot{grid-template-columns:1fr 1fr}.dv-nav-links{display:none}.dv-hide-m{display:none}}
-@media (max-width:600px){.dv-wk{grid-template-columns:repeat(2,minmax(0,1fr))}.dv-pk,.dv-trust,.dv-aud,.dv-foot{grid-template-columns:minmax(0,1fr)}.dv-hero-art{min-height:300px}}
-</style>
-<style>
-.wa-float{position:fixed;right:18px;bottom:18px;z-index:40;display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;text-decoration:none;padding:11px 16px 11px 13px;border-radius:999px;box-shadow:0 10px 30px rgba(20,42,79,.18);font:500 15px Rubik,system-ui,sans-serif}
-.wa-float svg{width:22px;height:22px} .wa-float:hover{background:#1EBE5A;color:#fff} @media (max-width:600px){.wa-float span{display:none}}
-</style>
+<meta property="og:title" content="Your first week in New Zealand, taken care of · DreamVoyagers">
+<meta property="og:description" content="Airport pickup, accommodation, SIM, food and bank/IRD assistance for students, professionals and families arriving in Auckland from India. Book before you fly.">
+<link rel="icon" href="./assets/img/favicon.png" type="image/png"><link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="./assets/css/styles.css">
+<link rel="stylesheet" href="./assets/css/theme-v2.css">
+<link rel="stylesheet" href="./assets/css/home.css">
 </head>
-<body data-root="./">
-<script src="assets/js/data.js"></script><script src="assets/js/app.js"></script>
-<script>
-DV.personalise = function(origin){ const msgs = {"IN": "Most flights from Delhi and Mumbai land mid-morning. Your host is at Door 2 by the time you clear customs — and a veg or Jain food pack is ready if you want one.", "CN": "Flights from Shanghai and Guangzhou arrive early morning. We confirm your pickup on WeChat as well as WhatsApp.", "PH": "Manila flights land late evening. Your room, SIM and a hot meal are ready — the bank visit waits until you have slept.", "VN": "Hanoi and Ho Chi Minh City connections land late afternoon — perfect for a first evening orientation walk.", "KR": "Direct Seoul flights arrive around 11am. We can have your bank appointment the very next morning.", "JP": "Tokyo flights arrive in the morning. Your welcome box includes green tea and a Japanese-language transport guide.", "NP": "Kathmandu connections usually arrive via Singapore or KL. We track the whole itinerary, not just the last leg.", "LK": "Colombo connections land late. We keep the first morning free and start the admin on day two.", "OT": "Tell us your flight number when you book — we tailor the first week around when you land."}; document.querySelectorAll('[data-personal]').forEach(el => { el.textContent = msgs[origin] || msgs.OT; }); };
-</script>
-<div style="font-family: Rubik, system-ui, sans-serif; color: #1E2B3A; background: #FBFBF9; line-height: 1.55; overflow: hidden">
+<body class="" data-root="./">
+<script src="./assets/js/data.js"></script><script src="./assets/js/app.js"></script>
 
-  <!-- ===== NAV ===== -->
-  <header style="background: rgba(251,251,249,.94); border-bottom: 1px solid #DEE3EA; position: relative; z-index: 5">
-    <div class="dv-wrap" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 76px">
-      <a href="#top" aria-label="DreamVoyagers home" style="display: inline-flex; align-items: center; text-decoration: none">
-        <svg viewBox="0 0 300 56" height="40" role="img" aria-label="DreamVoyagers" style="height: 40px; width: auto; display: block">
-          <g transform="translate(2,2)">
-            <circle cx="26" cy="26" r="26" fill="#0AA493"></circle>
-            <path d="M10 33c10-2 20-10 31-20" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"></path>
-            <path d="M41 13l-6 13-5-5-6 2z" fill="#fff"></path>
-            <path d="M9 40c8 0 14-4 20-6" stroke="#F4B942" stroke-width="3" fill="none" stroke-linecap="round" opacity=".95"></path>
-          </g>
-          <text x="66" y="37" font-family="Bricolage Grotesque, Rubik, Arial, sans-serif" font-size="27" font-weight="700" fill="#142A4F" letter-spacing="-0.5">Dream<tspan fill="#0AA493">Voyagers</tspan></text>
-        </svg>
-      </a>
-      <nav class="dv-nav-links" aria-label="Main">
-        <a href="#week">Your first week</a>
-        <a href="#packages">Packages</a>
-        <a href="#box">Welcome Box</a>
-        <a href="#trust">Why us</a>
-        <a href="contact.html">Contact</a>
+<div class="topbar"><div class="container"><span>Now booking arrivals from India into Auckland<span class="dv-long"> — other countries follow later</span>.</span><a data-wa href="#"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.5c0 3 3.5 6.5 6.5 6.5l1-1.5-2-1-1 1a5 5 0 0 1-3-3l1-1-1-2z"/></svg> WhatsApp us</a></div></div>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="./index.html" aria-label="DreamVoyagers home"><img src="./assets/img/logo.png" alt="DreamVoyagers" height="46"></a>
+    <ul class="nav-links">
+      <li><a href="./how-it-works.html">How it works</a></li>
+      <li><a href="./packages.html">Packages</a></li>
+      <li><a href="./welcome-box.html">Welcome Box</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./faq.html">FAQ</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-outline btn-sm" href="./account.html" data-account-link>Sign in</a>
+      <a class="btn btn-primary btn-sm" href="./book.html">Book my arrival</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<section class="hm-hero">
+  <div class="container hm-hero-grid">
+    <div>
+      <span class="launch-note"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16l20-7-9 9-2-5-5-2zm9 2 2 5 4-9"/></svg> Launching with flights from India</span>
+      <h1>Land in Auckland with everything already <em>sorted.</em></h1>
+      <p class="lead">Pickup at the airport, a room, a working SIM, food you recognise and your bank and IRD appointments booked — before your flight leaves India. One booking, one WhatsApp number.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary btn-lg" href="./packages.html">See packages &amp; prices</a>
+        <a class="btn btn-outline btn-lg" href="./how-it-works.html">How it works</a>
+      </div>
+      <ul class="hm-facts">
+        <li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Every booked flight met</li>
+        <li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Vegetarian &amp; Jain food packs</li>
+        <li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Parents can book for a student</li>
+        <li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Pay by card, refund up to 14 days before</li>
+      </ul>
+    </div>
+    <div class="hm-art">
+      <img src="https://images.unsplash.com/photo-1602847189686-6bb361a3066d?auto=format&fit=crop&w=1100&q=70" alt="Auckland city and the Sky Tower seen across the Waitematā Harbour">
+      <article class="hm-ticket" aria-label="Example arrival confirmation">
+        <div class="top"><strong>Aarav · DEL → AKL</strong><span>Tue 4 Nov · SQ285</span></div>
+        <div class="host"><img src="https://images.unsplash.com/photo-1787020308820-ed618b5ff86f?auto=format&fit=crop&w=120&q=70&fit=facearea&facepad=3&h=120" alt=""><div><b>Priya is your arrival host</b><small>Door 2, international arrivals</small></div></div>
+        <div class="tags"><span><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Flight tracked</span><span><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Room ready</span><span><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Veg food pack</span></div>
+      </article>
+    </div>
+  </div>
+  <div class="hm-india"><div class="container">
+    <span class="lbl">Flying from:</span>
+    <div class="chips"><button class="chip" data-origin="DEL" aria-pressed="false">Delhi</button><button class="chip" data-origin="BOM" aria-pressed="false">Mumbai</button><button class="chip" data-origin="BLR" aria-pressed="false">Bengaluru</button><button class="chip" data-origin="HYD" aria-pressed="false">Hyderabad</button><button class="chip" data-origin="MAA" aria-pressed="false">Chennai</button><button class="chip" data-origin="CCU" aria-pressed="false">Kolkata</button><button class="chip" data-origin="AMD" aria-pressed="false">Ahmedabad</button><button class="chip" data-origin="PNQ" aria-pressed="false">Pune</button><button class="chip" data-origin="COK" aria-pressed="false">Kochi</button><button class="chip" data-origin="IXC" aria-pressed="false">Chandigarh</button><button class="chip" data-origin="OTH" aria-pressed="false">Elsewhere in India</button></div>
+    <p data-personal hidden></p>
+  </div></div>
+</section>
+
+<section class="section section-tint">
+  <div class="container">
+    <div class="hm-head"><h2>Your first seven days, planned before you board</h2><p>Immigration New Zealand lists the admin every newcomer has to do. We turn it into one calm week, in the right order.</p></div>
+    <div class="hm-week">
+      <div class="hm-day"><span class="ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16l20-7-9 9-2-5-5-2zm9 2 2 5 4-9"/></svg></span><span class="lbl">Day 1</span><span class="txt">Met at the gate, driven to your room</span></div>
+      <div class="hm-day"><span class="ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 11h6v6H9z"/></svg></span><span class="lbl">Night 1</span><span class="txt">SIM live, food in the fridge, box on the bed</span></div>
+      <div class="hm-day"><span class="ico blue"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h18L12 4z"/><path d="M5 10v8M9 10v8M15 10v8M19 10v8M3 20h18"/></svg></span><span class="lbl">Day 2</span><span class="txt">Bank appointment, with us beside you</span></div>
+      <div class="hm-day"><span class="ico blue"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><span class="lbl">Day 3</span><span class="txt">IRD number applied for</span></div>
+      <div class="hm-day"><span class="ico sun"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="14" rx="3"/><path d="M4 11h16M8 21v-3M16 21v-3"/><circle cx="8" cy="15" r="1"/><circle cx="16" cy="15" r="1"/></svg></span><span class="lbl">Day 4</span><span class="txt">AT HOP card and the buses you need</span></div>
+      <div class="hm-day"><span class="ico sun"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M2 3h3l2.5 12h11L21 7H6"/></svg></span><span class="lbl">Day 5</span><span class="txt">Indian grocers and the weekly shop</span></div>
+      <div class="hm-day"><span class="ico fern"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><span class="lbl">Day 6–7</span><span class="txt">Campus or office route, flat viewings</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="packages">
+  <div class="container">
+    <div class="hm-head"><h2>Three ways to land</h2><p>Per person, NZ dollars, GST included. Every package comes with a named arrival host and WhatsApp support.</p></div>
+    <div class="hm-pk">
+      <article class="hm-pkg">
+        <div><span class="days">Day 1</span><h3>Essential Arrival</h3></div>
+        <div class="price">NZ$399<small>≈ ₹20,500</small></div>
+        <ul><li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Meet &amp; greet, private transfer</li><li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>NZ SIM or eSIM, activated</li><li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Arrival briefing and WhatsApp support, 7 days</li></ul>
+        <a class="btn btn-outline btn-block" href="./book.html?package=essential">Book Essential</a>
+      </article>
+      <article class="hm-pkg featured">
+        <span class="tag">Most booked</span>
+        <div><span class="days">Days 1–7</span><h3>7-Day Starter</h3></div>
+        <div class="price">NZ$699<small>≈ ₹35,900</small></div>
+        <ul><li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Everything in Essential</li><li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>7 nights in a vetted room, veg food pack</li><li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Bank &amp; IRD appointments booked</li></ul>
+        <a class="btn btn-primary btn-block" href="./book.html?package=starter">Book 7-Day Starter</a>
+      </article>
+      <article class="hm-pkg">
+        <div><span class="days">Days 1–7, accompanied</span><h3>Premium Landing</h3></div>
+        <div class="price">NZ$1,199<small>≈ ₹61,500</small></div>
+        <ul><li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Upgraded private room or studio</li><li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Someone beside you at every appointment</li><li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Campus orientation and two flat viewings</li></ul>
+        <a class="btn btn-outline btn-block" href="./book.html?package=premium">Book Premium</a>
+      </article>
+    </div>
+    <p class="hm-more">Travelling as a family, or staying a month? See <a href="./packages.html">Family Arrival (NZ$1,999) and 30-Day Settlement (NZ$2,499)</a>. Rupee figures are a guide only; you pay in NZ dollars.</p>
+  </div>
+</section>
+
+<section class="section section-sand">
+  <div class="container">
+    <div class="hm-head"><h2>Who we look after</h2></div>
+    <div class="hm-aud">
+      <article class="hm-tile"><img src="https://images.unsplash.com/photo-1637589316488-6d4c41b335cd?auto=format&fit=crop&w=700&q=70" alt="Two students with backpacks looking at notes together"><div class="body"><h3>Students</h3><p>Starting at AUT, University of Auckland, Massey or Unitec. Housed, connected and on campus by day six.</p></div></article>
+      <article class="hm-tile"><img src="https://images.unsplash.com/photo-1713130925840-4db3fbcabe4f?auto=format&fit=crop&w=700&q=70" alt="A father reading a message on his phone"><div class="body"><h3>Parents booking for a child</h3><p>You are in Delhi or Hyderabad; your 18-year-old lands alone. You get the host's name and photo, and a message the moment they are collected.</p></div></article>
+      <article class="hm-tile"><img src="https://images.unsplash.com/photo-1605806624815-fcfe04f04a22?auto=format&fit=crop&w=700&q=70" alt="A professional in a blazer taking a call"><div class="body"><h3>Skilled professionals</h3><p>Job starts in two weeks. Bank account, IRD number, SIM and a place to live — fast, with no guesswork.</p></div></article>
+      <article class="hm-tile"><img src="https://images.unsplash.com/photo-1590370082074-a48dcac07dd1?auto=format&fit=crop&w=700&q=70" alt="A father with his two children"><div class="body"><h3>Relocating families</h3><p>A van instead of a car, a family-sized apartment, groceries for everyone and a walk around the school zone.</p></div></article>
+      <article class="hm-tile"><img src="https://images.unsplash.com/photo-1768860322336-c24179a0aced?auto=format&fit=crop&w=700&q=70" alt="An older couple looking out over a harbour view"><div class="body"><h3>Visiting parents &amp; short stays</h3><p>Parents visiting a child who already lives here, or a two-week holiday: pickup, a SIM, a transport card and someone to call. No long-term admin.</p></div></article>
+      <article class="hm-tile"><img src="https://images.unsplash.com/photo-1758728119257-d88284600a48?auto=format&fit=crop&w=700&q=70" alt="A man working at a laptop"><div class="body"><h3>Business &amp; short assignments</h3><p>A conference, a client site or a three-month secondment. Serviced studio, SIM, transport and a local who knows the city.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container hm-box">
+    <img src="https://images.unsplash.com/photo-1571510175566-8aa5f41ebcc5?auto=format&fit=crop&w=900&q=70" alt="An open box filled with snacks and everyday essentials">
+    <div>
+      <h2>The NZ Welcome Box, India edition</h2>
+      <p class="lead">Because night one should not involve finding a power adapter at 11pm.</p>
+      <div class="hm-items"><span>NZ power adapter</span><span>SIM / eSIM</span><span>Masala chai &amp; biscuits</span><span>Ready-to-eat meals</span><span>Toiletries</span><span>AT HOP transport guide</span><span>Bank &amp; IRD checklist</span><span>Emergency numbers card</span></div>
+      <p class="small muted">Add it to any package for NZ$79. Vegetarian by default; Jain and vegan on request.</p>
+      <a class="btn btn-teal" href="./welcome-box.html">What's in the box</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint" id="track">
+  <div class="container hm-track">
+    <div>
+      <span class="hm-kicker">Your account</span>
+      <h2>Create an account and track your journey</h2>
+      <p>Every piece of your arrival is confirmed one by one. Sign in to see what is locked in, what is still being arranged, and what you need to do before you fly — and share the same view with a parent back home.</p>
+      <ul class="fact-list">
+        <li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Live status of pickup, room, SIM, food pack and appointments</span></li>
+        <li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Host's name and photo, meeting point and your day-by-day plan</span></li>
+        <li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Pre-departure checklist: documents, cash, what to pack in hand luggage</span></li>
+      </ul>
+      <div class="flex" style="margin-top:1.25rem"><a class="btn btn-primary" href="./account.html?mode=register">Create an account</a><a class="btn btn-outline" href="./account.html">Sign in</a></div>
+    </div>
+    <div class="hm-track-card" aria-label="Example journey tracker">
+      <div class="top"><strong>DV-2026-00112 · Aarav</strong><span class="badge s-ready_for_arrival">Ready for arrival</span></div>
+      <ol class="mini-steps"><li class="done">Booked</li><li class="done">Paid</li><li class="done">Arranging</li><li class="done">Confirmed</li><li class="now">Ready</li><li>Arrived</li></ol>
+      <ul class="mini-ms">
+        <li class="on"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Airport pickup</li><li class="on"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Room, Empire Apts</li><li class="on"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>SIM ready</li><li class="on"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Veg food pack</li><li class="on"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Bank appt, 5 Nov 10:00</li><li class="on"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>IRD session, 6 Nov</li>
+      </ul>
+      <div class="foot">Lands AKL Tue 4 Nov 10:35 · SQ285 · Host: Priya</div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-navy">
+  <div class="container">
+    <div class="hm-head"><h2>Straight talk about what we can and can't do</h2><p style="color:#B9C8E0">We book, prepare and attend. Banks and Inland Revenue make the decisions — and we will always say so.</p></div>
+    <div class="hm-trust">
+      <div><span class="ico" style="background:var(--teal)"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16l20-7-9 9-2-5-5-2zm9 2 2 5 4-9"/></svg></span><h3>Every flight met</h3><p>We track your flight. Delayed six hours in Singapore? Your host is still there with your name on a sign.</p></div>
+      <div><span class="ico" style="background:var(--blue)"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><h3>Your money is protected</h3><p>Card payments go through Stripe; we never see your card. Full refund if you cancel 14 or more days before arrival.</p></div>
+      <div><span class="ico" style="background:var(--fern)"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.5c0 3 3.5 6.5 6.5 6.5l1-1.5-2-1-1 1a5 5 0 0 1-3-3l1-1-1-2z"/></svg></span><h3>Real people, 7 days</h3><p>One WhatsApp number, answered by hosts who made this same journey from India themselves.</p></div>
+      <div><span class="ico" style="background:var(--coral)"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg></span><h3>No immigration advice</h3><p>We are not licensed immigration advisers and will not pretend to be. Practical help only, said plainly.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="hm-quote">
+      <img src="https://images.unsplash.com/photo-1704088030734-96769c4593a2?auto=format&fit=crop&w=160&q=70&fit=facearea&facepad=2.5&h=160" alt="">
+      <div><blockquote>“My son messaged me from the car before I had even stopped tracking the flight. That is what I paid for.”</blockquote><div class="who">Parent, Hyderabad — 7-Day Starter · placeholder testimonial for the prototype</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0"><div class="container"><div class="cta-band"><div><h2>Flying soon? Let’s sort your first week.</h2><p>Booking takes about ten minutes. Change your flight details any time up to 24 hours before you land.</p></div><div class="flex" style="justify-content:flex-end"><a class="btn btn-primary btn-lg" href="book.html">Book my arrival</a><a class="btn btn-light btn-lg" data-wa href="#">Ask on WhatsApp</a></div></div></div></section>
+
+
+<footer class="site-footer v2">
+  <div class="container">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <span class="ft-logo"><img src="./assets/img/logo-mark.png" alt="" height="36"><span>Dream<b>Voyagers</b></span></span>
+        <p>Your first week in New Zealand, taken care of. An arrival service for students, professionals and families flying from India to Auckland.</p>
+        <p class="disclaimer">We provide practical arrival assistance and are not licensed immigration advisers. Bank accounts are approved by banks and IRD numbers issued by Inland Revenue; we help you prepare and attend, we cannot guarantee outcomes.</p>
+      </div>
+      <nav class="ft-links" aria-label="Footer">
+        <h4>Explore</h4>
+        <a href="./how-it-works.html">How it works</a><a href="./packages.html">Packages &amp; pricing</a><a href="./welcome-box.html">Welcome Box</a><a href="./about.html">About</a><a href="./faq.html">FAQ</a>
       </nav>
-      <div style="display: flex; gap: 10px; align-items: center">
-        <a href="contact.html" class="dv-btn dv-btn-outline dv-hide-m" style="min-height: 44px; padding: 10px 18px; font-size: 15px">Ask a question</a>
-        <a href="book.html" class="dv-btn dv-btn-coral" style="min-height: 44px; padding: 10px 18px; font-size: 15px">Book my arrival</a>
+      <nav class="ft-links" aria-label="Help">
+        <h4>Help</h4>
+        <a href="./account.html">My account</a><a href="./contact.html">Contact</a><a href="./refunds.html">Cancellation &amp; refunds</a><a href="./terms.html">Terms</a><a href="./privacy.html">Privacy</a><a href="./admin/login.html">Team sign in</a>
+      </nav>
+      <div class="ft-contact">
+        <h4>Find us</h4>
+        <span>27E Smales Road, East Tamaki<br>Auckland 2013, New Zealand</span>
+        <a href="mailto:hello@dreamvoyagers.co.nz">hello@dreamvoyagers.co.nz</a>
+        <span>+64 9 000 0000 <span class="muted">(placeholder)</span></span>
+        <a data-wa href="#">WhatsApp, 7 days</a>
+        <span>Mon–Sat 8am–8pm NZT<br>2:30am–2:30pm IST</span>
       </div>
     </div>
-  </header>
-
-  <!-- ===== HERO ===== -->
-  <section id="top" style="position: relative; background: #FBFBF9; padding: 72px 0 0">
-    <div class="dv-wrap dv-hero">
-      <div style="display: flex; flex-direction: column; gap: 22px">
-        <div style="display: inline-flex; align-items: center; gap: 10px; align-self: flex-start; background: #E3F4F1; color: #087F72; border-radius: 999px; padding: 8px 14px 8px 10px; font-size: 14px; font-weight: 500">
-          <span style="width: 22px; height: 22px; border-radius: 50%; background: #0AA493; display: inline-flex; align-items: center; justify-content: center">
-            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16l20-7-9 9-2-5-5-2z"></path></svg>
-          </span>
-          Auckland arrivals · students, migrants &amp; families
-        </div>
-        <h1 style="margin: 0; font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-weight: 800; font-size: clamp(44px, 5.2vw, 76px); line-height: 1; letter-spacing: -.025em; color: #142A4F; max-width: 12ch">Land in Auckland with everything already <span style="color: #0AA493">sorted.</span></h1>
-        <p style="margin: 0; font-size: 20px; color: #4A5668; max-width: 42ch">Pickup, a room, a SIM, food in the fridge and your bank visit booked — before your flight lands. One booking, one WhatsApp number.</p>
-        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 6px">
-          <a href="#packages" class="dv-btn dv-btn-coral" style="min-height: 54px; padding: 14px 28px; font-size: 17px">Choose my arrival package</a>
-          <a href="#week" class="dv-btn dv-btn-outline" style="min-height: 54px; padding: 14px 28px; font-size: 17px">See the first week</a>
-        </div>
-        <div style="display: flex; align-items: center; gap: 14px; margin-top: 6px">
-          <div style="display: flex">
-            <span style="width: 36px; height: 36px; border-radius: 50%; background: #F1C7A6; border: 2px solid #FBFBF9"></span>
-            <span style="width: 36px; height: 36px; border-radius: 50%; background: #3D60AC; border: 2px solid #FBFBF9; margin-left: -10px"></span>
-            <span style="width: 36px; height: 36px; border-radius: 50%; background: #D9A27A; border: 2px solid #FBFBF9; margin-left: -10px"></span>
-            <span style="width: 36px; height: 36px; border-radius: 50%; background: #0AA493; border: 2px solid #FBFBF9; margin-left: -10px"></span>
-          </div>
-          <span style="font-size: 15px; color: #4A5668">Hosts who made this same journey. Real people on WhatsApp, 7 days.</span>
-        </div>
-      </div>
-
-      <!-- Plane-window illustration -->
-      <div class="dv-hero-art" style="position: relative; min-height: 520px; display: flex; align-items: center; justify-content: center">
-        <div style="position: relative; width: 100%; max-width: 440px; aspect-ratio: 440 / 560; border-radius: 220px 220px 200px 200px; background: #142A4F; padding: 22px; box-shadow: 0 30px 60px rgba(20,42,79,.18)">
-          <div style="width: 100%; height: 100%; border-radius: 200px 200px 180px 180px; overflow: hidden; background: #BFE6F2; position: relative">
-            <svg viewBox="0 0 396 516" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration: Auckland harbour, the Sky Tower and Rangitoto seen from a plane window" style="width: 100%; height: 100%; display: block">
-              <!-- sky -->
-              <rect width="396" height="516" fill="#D6EEF6"></rect>
-              <rect y="0" width="396" height="200" fill="#C3E5F1"></rect>
-              <circle cx="300" cy="96" r="38" fill="#F4B942"></circle>
-              <!-- clouds -->
-              <g fill="#fff" opacity=".9">
-                <ellipse cx="90" cy="120" rx="44" ry="16"></ellipse><ellipse cx="116" cy="110" rx="30" ry="18"></ellipse>
-                <ellipse cx="250" cy="170" rx="36" ry="13"></ellipse><ellipse cx="272" cy="162" rx="24" ry="14"></ellipse>
-              </g>
-              <!-- Rangitoto -->
-              <path d="M0 300 C60 292 110 262 180 258 S300 292 396 288 V330 H0z" fill="#9ED5CB"></path>
-              <!-- sea -->
-              <rect y="318" width="396" height="200" fill="#0AA493" opacity=".55"></rect>
-              <rect y="318" width="396" height="200" fill="#5FD3C4" opacity=".35"></rect>
-              <g stroke="#fff" stroke-opacity=".55" stroke-width="2" fill="none">
-                <path d="M0 350 Q40 346 80 350 T160 350 T240 350 T320 350 T400 350"></path>
-                <path d="M0 390 Q40 386 80 390 T160 390 T240 390 T320 390 T400 390"></path>
-                <path d="M0 430 Q40 426 80 430 T160 430 T240 430 T320 430 T400 430"></path>
-              </g>
-              <!-- city -->
-              <g fill="#3D60AC">
-                <rect x="30" y="262" width="26" height="60"></rect><rect x="62" y="248" width="18" height="74"></rect><rect x="86" y="270" width="30" height="52"></rect>
-                <rect x="124" y="256" width="22" height="66"></rect><rect x="152" y="240" width="16" height="82"></rect>
-                <rect x="232" y="258" width="22" height="64"></rect><rect x="260" y="246" width="18" height="76"></rect><rect x="286" y="268" width="30" height="54"></rect><rect x="326" y="252" width="20" height="70"></rect><rect x="352" y="270" width="26" height="52"></rect>
-              </g>
-              <g fill="#22407A">
-                <rect x="40" y="276" width="6" height="6"></rect><rect x="68" y="262" width="6" height="6"></rect><rect x="96" y="284" width="6" height="6"></rect><rect x="130" y="270" width="6" height="6"></rect><rect x="238" y="272" width="6" height="6"></rect><rect x="296" y="282" width="6" height="6"></rect><rect x="332" y="266" width="6" height="6"></rect>
-              </g>
-              <!-- Sky Tower -->
-              <g fill="#142A4F">
-                <rect x="196" y="120" width="6" height="202"></rect>
-                <rect x="186" y="170" width="26" height="12" rx="3"></rect>
-                <rect x="182" y="182" width="34" height="18" rx="4"></rect>
-                <rect x="190" y="200" width="18" height="122"></rect>
-                <rect x="198" y="92" width="2" height="30"></rect>
-              </g>
-              <!-- Harbour Bridge -->
-              <g stroke="#142A4F" fill="none">
-                <path d="M300 322 L330 296 Q360 272 390 296 L420 322" stroke-width="4"></path>
-                <path d="M300 322 H420" stroke-width="5"></path>
-                <path d="M330 296v26M345 284v38M360 278v44M375 284v38M390 296v26" stroke-width="2"></path>
-              </g>
-              <!-- ferry -->
-              <g>
-                <path d="M120 440 h70 l-8 14 h-54z" fill="#fff"></path>
-                <rect x="134" y="428" width="40" height="12" rx="2" fill="#E8613F"></rect>
-              </g>
-              <!-- plane wing hint -->
-              <path d="M-20 470 L240 516 L-20 516z" fill="#DEE3EA"></path>
-              <path d="M-20 478 L200 516" stroke="#fff" stroke-width="3"></path>
-            </svg>
-          </div>
-          <!-- rivets -->
-          <span style="position: absolute; top: 50%; left: 8px; width: 6px; height: 6px; border-radius: 50%; background: #3D60AC"></span>
-          <span style="position: absolute; top: 50%; right: 8px; width: 6px; height: 6px; border-radius: 50%; background: #3D60AC"></span>
-        </div>
-
-        <!-- floating arrival ticket -->
-        <article aria-label="Example arrival confirmation" style="position: absolute; left: 0; bottom: 36px; background: #fff; border-radius: 18px; box-shadow: 0 16px 40px rgba(20,42,79,.16); padding: 16px 18px; width: 272px; display: flex; flex-direction: column; gap: 10px; border: 1px solid #fff">
-          <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px">
-            <strong style="font-family: 'Bricolage Grotesque', Rubik, sans-serif; color: #142A4F; font-size: 16px">Aarav · AKL</strong>
-            <span style="font-size: 12px; color: #4A5668">Tue 4 Nov · SQ285</span>
-          </div>
-          <div style="display: flex; align-items: center; gap: 10px; border-top: 1px dashed #DEE3EA; padding-top: 10px">
-            <span style="width: 34px; height: 34px; border-radius: 50%; background: #D9A27A; flex: none"></span>
-            <div style="font-size: 13px; line-height: 1.35"><div style="font-weight: 500">Priya is your host</div><div style="color: #4A5668">Door 2, international arrivals</div></div>
-          </div>
-          <div style="display: flex; gap: 6px; flex-wrap: wrap">
-            <span style="display: inline-flex; align-items: center; gap: 5px; background: #EEF4E1; color: #4F6A1E; border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 500">
-              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Flight tracked
-            </span>
-            <span style="display: inline-flex; align-items: center; gap: 5px; background: #EEF4E1; color: #4F6A1E; border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 500">
-              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Room ready
-            </span>
-            <span style="display: inline-flex; align-items: center; gap: 5px; background: #FFF4DD; color: #7A5200; border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 500">SIM in box</span>
-          </div>
-        </article>
-
-        <!-- floating WhatsApp bubble -->
-        <div style="position: absolute; right: 0; top: 48px; background: #142A4F; color: #fff; border-radius: 18px 18px 18px 4px; padding: 10px 14px; font-size: 13px; box-shadow: 0 12px 30px rgba(20,42,79,.2); max-width: 200px; display: flex; gap: 8px; align-items: flex-start">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#5FD3C4" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"></path></svg>
-          <span>Landed? I'm at Door 2 with your sign.</span>
-        </div>
-      </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> DreamVoyagers Ltd — a venture of the ANZ Pharma group, Auckland.</span>
+      <span>Payments by Stripe · Prices in NZD incl. GST · Photos: <a href="https://unsplash.com" rel="noopener">Unsplash</a></span>
     </div>
+  </div>
+</footer>
+<a class="wa-float" data-wa href="#"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.5c0 3 3.5 6.5 6.5 6.5l1-1.5-2-1-1 1a5 5 0 0 1-3-3l1-1-1-2z"/></svg><span>Chat on WhatsApp</span></a>
 
-    <!-- ===== FLIGHT PATH / ORIGIN SELECTOR ===== -->
-    <div class="dv-wrap" style="margin-top: 56px; padding-bottom: 64px">
-      <div style="background: #fff; border: 1px solid #DEE3EA; border-radius: 24px; padding: 28px 28px 24px; display: flex; flex-direction: column; gap: 18px">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap">
-          <h2 style="margin: 0; font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-size: 22px; font-weight: 600; color: #142A4F">Where are you flying from?</h2>
-          <span style="font-size: 14px; color: #4A5668">Tap your city — we'll tailor the plan</span>
-        </div>
-        <!-- arc graphic -->
-        <svg viewBox="0 0 1140 120" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="width: 100%; height: auto; display: block">
-          <path d="M40 100 C 300 -20, 840 -20, 1100 100" stroke="#C9EAE4" stroke-width="3" fill="none" stroke-dasharray="6 8"></path>
-          <g fill="#3D60AC">
-            <circle cx="40" cy="100" r="6"></circle><circle cx="160" cy="52" r="5"></circle><circle cx="300" cy="24" r="5"></circle><circle cx="450" cy="11" r="5"></circle><circle cx="600" cy="8" r="5"></circle><circle cx="750" cy="14" r="5"></circle><circle cx="900" cy="34" r="5"></circle>
-          </g>
-          <g fill="#4A5668" font-family="Rubik, system-ui, sans-serif" font-size="13" text-anchor="middle">
-            <text x="40" y="118">Delhi</text><text x="160" y="74">Manila</text><text x="300" y="46">Shanghai</text><text x="450" y="34">Hanoi</text><text x="600" y="30">Seoul</text><text x="750" y="36">Tokyo</text><text x="900" y="56">Colombo</text>
-          </g>
-          <g transform="translate(1100,100)">
-            <circle r="22" fill="#0AA493"></circle>
-            <path d="M-9 6c5-1 10-5 15-10" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"></path>
-            <path d="M7 -5l-3 7-3-3-3 1z" fill="#fff"></path>
-          </g>
-          <text x="1100" y="118" fill="#142A4F" font-family="Bricolage Grotesque, Rubik, sans-serif" font-weight="700" font-size="14" text-anchor="middle" dy="20">AKL</text>
-        </svg>
-        <div style="display: flex; flex-wrap: wrap; gap: 8px">
-          <button type="button" class="dv-pill chip" data-origin="IN" aria-pressed="false"><span style="width: 10px; height: 10px; border-radius: 50%; background: #0AA493; display: inline-block"></span>India</button><button type="button" class="dv-pill chip" data-origin="CN" aria-pressed="false"><span style="width: 10px; height: 10px; border-radius: 50%; background: #0AA493; display: inline-block"></span>China</button><button type="button" class="dv-pill chip" data-origin="PH" aria-pressed="false"><span style="width: 10px; height: 10px; border-radius: 50%; background: #0AA493; display: inline-block"></span>Philippines</button><button type="button" class="dv-pill chip" data-origin="VN" aria-pressed="false"><span style="width: 10px; height: 10px; border-radius: 50%; background: #0AA493; display: inline-block"></span>Vietnam</button><button type="button" class="dv-pill chip" data-origin="KR" aria-pressed="false"><span style="width: 10px; height: 10px; border-radius: 50%; background: #0AA493; display: inline-block"></span>South Korea</button><button type="button" class="dv-pill chip" data-origin="JP" aria-pressed="false"><span style="width: 10px; height: 10px; border-radius: 50%; background: #0AA493; display: inline-block"></span>Japan</button><button type="button" class="dv-pill chip" data-origin="NP" aria-pressed="false"><span style="width: 10px; height: 10px; border-radius: 50%; background: #0AA493; display: inline-block"></span>Nepal</button><button type="button" class="dv-pill chip" data-origin="LK" aria-pressed="false"><span style="width: 10px; height: 10px; border-radius: 50%; background: #0AA493; display: inline-block"></span>Sri Lanka</button><button type="button" class="dv-pill chip" data-origin="OT" aria-pressed="false"><span style="width: 10px; height: 10px; border-radius: 50%; background: #0AA493; display: inline-block"></span>Somewhere else</button>
-        </div>
-        <p data-personal style="margin: 0; font-size: 15px; color: #087F72; font-weight: 500; min-height: 22px">Pick a city to see how we plan an arrival from there.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== YOUR FIRST WEEK ===== -->
-  <section id="week" style="background: #E3F4F1; padding: 88px 0">
-    <div class="dv-wrap" style="display: flex; flex-direction: column; gap: 40px">
-      <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap">
-        <h2 style="margin: 0; font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-size: clamp(32px, 3.4vw, 46px); font-weight: 700; letter-spacing: -.02em; color: #142A4F; line-height: 1.05; max-width: 20ch">Your first seven days, planned before you board.</h2>
-        <p style="margin: 0; font-size: 17px; color: #4A5668; max-width: 36ch">Immigration NZ lists the admin every newcomer must do. We turn it into one calm week.</p>
-      </div>
-
-      <div style="position: relative">
-        <div style="position: absolute; left: 7%; right: 7%; top: 44px; height: 3px; background: #9ED5CB; border-radius: 2px"></div>
-        <div class="dv-wk">
-          <!-- Day 1 -->
-          <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; position: relative">
-            <div style="width: 88px; height: 88px; border-radius: 50%; background: #0AA493; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(10,164,147,.3)">
-              <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16l20-7-9 9-2-5-5-2zm9 2 2 5 4-9"></path></svg>
-            </div>
-            <div style="font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-weight: 700; color: #087F72; font-size: 13px; letter-spacing: .06em; text-transform: uppercase">Day 1</div>
-            <div style="font-weight: 500; color: #142A4F; font-size: 16px; line-height: 1.3">Met at the gate, driven home</div>
-          </div>
-          <!-- Day 1b -->
-          <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center">
-            <div style="width: 88px; height: 88px; border-radius: 50%; background: #fff; border: 3px solid #0AA493; display: flex; align-items: center; justify-content: center">
-              <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#0AA493" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"></rect><path d="M9 11h6v6H9z"></path></svg>
-            </div>
-            <div style="font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-weight: 700; color: #087F72; font-size: 13px; letter-spacing: .06em; text-transform: uppercase">Night 1</div>
-            <div style="font-weight: 500; color: #142A4F; font-size: 16px; line-height: 1.3">SIM live, fridge full, box on the bed</div>
-          </div>
-          <!-- Day 2 -->
-          <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center">
-            <div style="width: 88px; height: 88px; border-radius: 50%; background: #fff; border: 3px solid #3D60AC; display: flex; align-items: center; justify-content: center">
-              <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#3D60AC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h18L12 4z"></path><path d="M5 10v8M9 10v8M15 10v8M19 10v8M3 20h18"></path></svg>
-            </div>
-            <div style="font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-weight: 700; color: #3D60AC; font-size: 13px; letter-spacing: .06em; text-transform: uppercase">Day 2</div>
-            <div style="font-weight: 500; color: #142A4F; font-size: 16px; line-height: 1.3">Bank appointment, with us beside you</div>
-          </div>
-          <!-- Day 3 -->
-          <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center">
-            <div style="width: 88px; height: 88px; border-radius: 50%; background: #fff; border: 3px solid #3D60AC; display: flex; align-items: center; justify-content: center">
-              <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#3D60AC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg>
-            </div>
-            <div style="font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-weight: 700; color: #3D60AC; font-size: 13px; letter-spacing: .06em; text-transform: uppercase">Day 3</div>
-            <div style="font-weight: 500; color: #142A4F; font-size: 16px; line-height: 1.3">IRD number applied for</div>
-          </div>
-          <!-- Day 4 -->
-          <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center">
-            <div style="width: 88px; height: 88px; border-radius: 50%; background: #fff; border: 3px solid #F4B942; display: flex; align-items: center; justify-content: center">
-              <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#B07D0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="14" rx="3"></rect><path d="M4 11h16M8 21v-3M16 21v-3"></path><circle cx="8" cy="15" r="1"></circle><circle cx="16" cy="15" r="1"></circle></svg>
-            </div>
-            <div style="font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-weight: 700; color: #8A6200; font-size: 13px; letter-spacing: .06em; text-transform: uppercase">Day 4</div>
-            <div style="font-weight: 500; color: #142A4F; font-size: 16px; line-height: 1.3">HOP card &amp; a bus you can trust</div>
-          </div>
-          <!-- Day 5 -->
-          <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center">
-            <div style="width: 88px; height: 88px; border-radius: 50%; background: #fff; border: 3px solid #F4B942; display: flex; align-items: center; justify-content: center">
-              <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#B07D0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle><path d="M2 3h3l2.5 12h11L21 7H6"></path></svg>
-            </div>
-            <div style="font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-weight: 700; color: #8A6200; font-size: 13px; letter-spacing: .06em; text-transform: uppercase">Day 5</div>
-            <div style="font-weight: 500; color: #142A4F; font-size: 16px; line-height: 1.3">Grocery run for food you recognise</div>
-          </div>
-          <!-- Day 6-7 -->
-          <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center">
-            <div style="width: 88px; height: 88px; border-radius: 50%; background: #fff; border: 3px solid #80A33D; display: flex; align-items: center; justify-content: center">
-              <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#5F7A2A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg>
-            </div>
-            <div style="font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-weight: 700; color: #5F7A2A; font-size: 13px; letter-spacing: .06em; text-transform: uppercase">Day 6–7</div>
-            <div style="font-weight: 500; color: #142A4F; font-size: 16px; line-height: 1.3">Campus tour &amp; long-term flat viewings</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== PACKAGES ===== -->
-  <section id="packages" style="padding: 96px 0">
-    <div class="dv-wrap" style="display: flex; flex-direction: column; gap: 40px">
-      <div style="text-align: center; display: flex; flex-direction: column; gap: 12px; align-items: center">
-        <h2 style="margin: 0; font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-size: clamp(32px, 3.4vw, 46px); font-weight: 700; letter-spacing: -.02em; color: #142A4F; line-height: 1.05">Three ways to land</h2>
-        <p style="margin: 0; font-size: 17px; color: #4A5668; max-width: 44ch">Per person, NZ dollars, GST included. Every package comes with a named host and WhatsApp support.</p>
-      </div>
-
-      <div class="dv-pk">
-        <!-- Essential -->
-        <article class="dv-card" style="background: #fff; border: 1px solid #DEE3EA; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 20px">
-          <div style="display: flex; flex-direction: column; gap: 6px">
-            <span style="font-size: 13px; font-weight: 500; color: #087F72; letter-spacing: .06em; text-transform: uppercase">Day 1</span>
-            <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-size: 26px; font-weight: 700; color: #142A4F">Essential Arrival</h3>
-          </div>
-          <div style="display: flex; align-items: baseline; gap: 4px"><span style="font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-size: 44px; font-weight: 700; color: #142A4F; letter-spacing: -.02em">NZ$399</span></div>
-          <svg viewBox="0 0 280 90" aria-hidden="true" style="width: 100%; height: auto; display: block">
-            <rect width="280" height="90" rx="14" fill="#E3F4F1"></rect>
-            <path d="M30 62 h220" stroke="#9ED5CB" stroke-width="3" stroke-linecap="round"></path>
-            <g transform="translate(60,40)"><circle r="20" fill="#0AA493"></circle><path d="M-8 4c4-1 9-4 14-9" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"></path><path d="M7 -5l-3 7-3-3-3 1z" fill="#fff"></path></g>
-            <g transform="translate(140,40)"><circle r="20" fill="#fff" stroke="#0AA493" stroke-width="2.5"></circle><rect x="-6" y="-9" width="12" height="18" rx="2" fill="none" stroke="#0AA493" stroke-width="2"></rect></g>
-            <g transform="translate(220,40)"><circle r="20" fill="#fff" stroke="#0AA493" stroke-width="2.5"></circle><path d="M-8 -2a8 8 0 1 1 3 10l-5 1 1-4a8 8 0 0 1 1-7z" fill="none" stroke="#0AA493" stroke-width="2"></path></g>
-          </svg>
-          <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #1E2B3A">
-            <li style="display: flex; gap: 10px; align-items: flex-start"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#80A33D" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"></path></svg>Meet &amp; greet, private transfer</li>
-            <li style="display: flex; gap: 10px; align-items: flex-start"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#80A33D" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"></path></svg>NZ SIM or eSIM, activated</li>
-            <li style="display: flex; gap: 10px; align-items: flex-start"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#80A33D" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"></path></svg>WhatsApp support for 7 days</li>
-          </ul>
-          <a href="book.html?package=essential" class="dv-btn dv-btn-outline" style="margin-top: auto">Book Essential</a>
-        </article>
-
-        <!-- Starter (featured) -->
-        <article class="dv-card" style="background: #142A4F; color: #fff; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 20px; position: relative; box-shadow: 0 24px 50px rgba(20,42,79,.22)">
-          <span style="position: absolute; top: -14px; left: 32px; background: #F4B942; color: #142A4F; font-size: 13px; font-weight: 600; border-radius: 999px; padding: 6px 14px">Most booked</span>
-          <div style="display: flex; flex-direction: column; gap: 6px">
-            <span style="font-size: 13px; font-weight: 500; color: #5FD3C4; letter-spacing: .06em; text-transform: uppercase">Days 1–7</span>
-            <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-size: 26px; font-weight: 700; color: #fff">7-Day Starter</h3>
-          </div>
-          <div style="display: flex; align-items: baseline; gap: 4px"><span style="font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-size: 44px; font-weight: 700; color: #fff; letter-spacing: -.02em">NZ$699</span></div>
-          <svg viewBox="0 0 280 90" aria-hidden="true" style="width: 100%; height: auto; display: block">
-            <rect width="280" height="90" rx="14" fill="#22407A"></rect>
-            <path d="M30 62 h220" stroke="#3D60AC" stroke-width="3" stroke-linecap="round"></path>
-            <g transform="translate(50,40)"><circle r="20" fill="#0AA493"></circle><path d="M-8 4c4-1 9-4 14-9" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"></path><path d="M7 -5l-3 7-3-3-3 1z" fill="#fff"></path></g>
-            <g transform="translate(110,40)"><circle r="20" fill="#5FD3C4"></circle><path d="M-9 1 0 -6l9 7M-6 0v7h12V0" fill="none" stroke="#142A4F" stroke-width="2"></path></g>
-            <g transform="translate(170,40)"><circle r="20" fill="#F4B942"></circle><path d="M-9 -3h18l-9-6zM-7 -3v9M-2 -3v9M2 -3v9M7 -3v9M-9 8h18" fill="none" stroke="#142A4F" stroke-width="2"></path></g>
-            <g transform="translate(230,40)"><circle r="20" fill="#E8613F"></circle><path d="M-8 -6h16v12h-16zM-8 -1h16" fill="none" stroke="#fff" stroke-width="2"></path></g>
-          </svg>
-          <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #DCE6F5">
-            <li style="display: flex; gap: 10px; align-items: flex-start"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#5FD3C4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"></path></svg>Everything in Essential</li>
-            <li style="display: flex; gap: 10px; align-items: flex-start"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#5FD3C4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"></path></svg>7 nights in a vetted room, food pack</li>
-            <li style="display: flex; gap: 10px; align-items: flex-start"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#5FD3C4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"></path></svg>Bank &amp; IRD appointments booked</li>
-          </ul>
-          <a href="book.html?package=starter" class="dv-btn dv-btn-coral" style="margin-top: auto">Book 7-Day Starter</a>
-        </article>
-
-        <!-- Premium -->
-        <article class="dv-card" style="background: #fff; border: 1px solid #DEE3EA; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 20px">
-          <div style="display: flex; flex-direction: column; gap: 6px">
-            <span style="font-size: 13px; font-weight: 500; color: #3D60AC; letter-spacing: .06em; text-transform: uppercase">Days 1–7 · accompanied</span>
-            <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-size: 26px; font-weight: 700; color: #142A4F">Premium Landing</h3>
-          </div>
-          <div style="display: flex; align-items: baseline; gap: 4px"><span style="font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-size: 44px; font-weight: 700; color: #142A4F; letter-spacing: -.02em">NZ$1,199</span></div>
-          <svg viewBox="0 0 280 90" aria-hidden="true" style="width: 100%; height: auto; display: block">
-            <rect width="280" height="90" rx="14" fill="#EEF2FA"></rect>
-            <path d="M30 62 h220" stroke="#C5D0E8" stroke-width="3" stroke-linecap="round"></path>
-            <g transform="translate(50,40)"><circle r="20" fill="#3D60AC"></circle><path d="M-9 1 0 -6l9 7M-6 0v7h12V0" fill="none" stroke="#fff" stroke-width="2"></path></g>
-            <g transform="translate(110,40)"><circle r="20" fill="#fff" stroke="#3D60AC" stroke-width="2.5"></circle><circle cx="-4" cy="-4" r="4" fill="none" stroke="#3D60AC" stroke-width="2"></circle><path d="M-11 8a7 7 0 0 1 14 0M3 -2a3.5 3.5 0 0 1 7 2M4 8a5 5 0 0 1 8-2" fill="none" stroke="#3D60AC" stroke-width="2"></path></g>
-            <g transform="translate(170,40)"><circle r="20" fill="#fff" stroke="#3D60AC" stroke-width="2.5"></circle><path d="M-9 -4 0 -9l9 5-9 5zM-5 -1v5c3 2 7 2 10 0v-5" fill="none" stroke="#3D60AC" stroke-width="2"></path></g>
-            <g transform="translate(230,40)"><circle r="20" fill="#fff" stroke="#3D60AC" stroke-width="2.5"></circle><path d="M-8 -8h16v16h-16zM-8 -2h16M-2 -8v16" fill="none" stroke="#3D60AC" stroke-width="2"></path></g>
-          </svg>
-          <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #1E2B3A">
-            <li style="display: flex; gap: 10px; align-items: flex-start"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#80A33D" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"></path></svg>Upgraded private room or studio</li>
-            <li style="display: flex; gap: 10px; align-items: flex-start"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#80A33D" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"></path></svg>Someone beside you at every appointment</li>
-            <li style="display: flex; gap: 10px; align-items: flex-start"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#80A33D" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"></path></svg>Campus orientation + 2 flat viewings</li>
-          </ul>
-          <a href="book.html?package=premium" class="dv-btn dv-btn-outline" style="margin-top: auto">Book Premium</a>
-        </article>
-      </div>
-
-      <p style="margin: 0; text-align: center; font-size: 16px; color: #4A5668">Travelling as a family, or staying a month? <a href="packages.html" style="font-weight: 500">Family Arrival (NZ$1,999) and 30-Day Settlement (NZ$2,499) →</a></p>
-    </div>
-  </section>
-
-  <!-- ===== WHO WE LOOK AFTER ===== -->
-  <section style="background: #F3F1EC; padding: 88px 0">
-    <div class="dv-wrap" style="display: flex; flex-direction: column; gap: 36px">
-      <h2 style="margin: 0; font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-size: clamp(32px, 3.4vw, 46px); font-weight: 700; letter-spacing: -.02em; color: #142A4F; line-height: 1.05">Who we look after</h2>
-      <div class="dv-aud">
-        <!-- Students -->
-        <article class="dv-card" style="background: #fff; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
-          <div style="position: relative; aspect-ratio: 4 / 3; background: #E3F4F1">
-            <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Photo slot: student on campus" style="width: 100%; height: 100%; display: block">
-              <rect width="400" height="300" fill="#E3F4F1"></rect>
-              <rect x="0" y="210" width="400" height="90" fill="#C9EAE4"></rect>
-              <path d="M40 210 V120 h120 l20-30 20 30 h120 V210z" fill="#9ED5CB"></path>
-              <rect x="90" y="150" width="30" height="40" fill="#fff"></rect><rect x="160" y="150" width="30" height="40" fill="#fff"></rect><rect x="230" y="150" width="30" height="40" fill="#fff"></rect>
-              <circle cx="200" cy="170" r="30" fill="#D9A27A"></circle>
-              <path d="M150 300 a50 50 0 0 1 100 0z" fill="#0AA493"></path>
-              <rect x="222" y="230" width="34" height="46" rx="6" fill="#3D60AC"></rect>
-            </svg>
-            <span style="position: absolute; left: 12px; bottom: 12px; background: rgba(20,42,79,.75); color: #fff; font-size: 11px; border-radius: 6px; padding: 3px 8px">Photo: student arriving</span>
-          </div>
-          <div style="padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 6px">
-            <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-size: 20px; font-weight: 700; color: #142A4F">International students</h3>
-            <p style="margin: 0; font-size: 15px; color: #4A5668">AUT, UoA, Massey, Unitec — housed and on campus by day six.</p>
-          </div>
-        </article>
-        <!-- Parents -->
-        <article class="dv-card" style="background: #fff; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
-          <div style="position: relative; aspect-ratio: 4 / 3; background: #FFF4DD">
-            <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Photo slot: parent on a video call" style="width: 100%; height: 100%; display: block">
-              <rect width="400" height="300" fill="#FFF4DD"></rect>
-              <rect x="110" y="40" width="180" height="230" rx="22" fill="#142A4F"></rect>
-              <rect x="122" y="56" width="156" height="198" rx="12" fill="#E3F4F1"></rect>
-              <circle cx="200" cy="130" r="34" fill="#F1C7A6"></circle>
-              <path d="M140 254 a60 60 0 0 1 120 0z" fill="#3D60AC"></path>
-              <circle cx="300" cy="80" r="26" fill="#80A33D"></circle>
-              <path d="M290 80l7 7 13-13" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-            <span style="position: absolute; left: 12px; bottom: 12px; background: rgba(20,42,79,.75); color: #fff; font-size: 11px; border-radius: 6px; padding: 3px 8px">Photo: parent, video call</span>
-          </div>
-          <div style="padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 6px">
-            <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-size: 20px; font-weight: 700; color: #142A4F">Parents booking for a child</h3>
-            <p style="margin: 0; font-size: 15px; color: #4A5668">You get the host's name and photo, and a message the moment they're collected.</p>
-          </div>
-        </article>
-        <!-- Migrants -->
-        <article class="dv-card" style="background: #fff; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
-          <div style="position: relative; aspect-ratio: 4 / 3; background: #EEF2FA">
-            <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Photo slot: skilled migrant on first workday" style="width: 100%; height: 100%; display: block">
-              <rect width="400" height="300" fill="#EEF2FA"></rect>
-              <g fill="#C5D0E8"><rect x="30" y="80" width="60" height="150"></rect><rect x="110" y="40" width="50" height="190"></rect><rect x="250" y="60" width="70" height="170"></rect><rect x="340" y="110" width="40" height="120"></rect></g>
-              <rect x="0" y="230" width="400" height="70" fill="#DEE3EA"></rect>
-              <circle cx="200" cy="140" r="32" fill="#D9A27A"></circle>
-              <path d="M146 300 a54 54 0 0 1 108 0z" fill="#22407A"></path>
-              <rect x="236" y="220" width="44" height="34" rx="5" fill="#E8613F"></rect>
-            </svg>
-            <span style="position: absolute; left: 12px; bottom: 12px; background: rgba(20,42,79,.75); color: #fff; font-size: 11px; border-radius: 6px; padding: 3px 8px">Photo: first day at work</span>
-          </div>
-          <div style="padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 6px">
-            <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-size: 20px; font-weight: 700; color: #142A4F">Skilled migrants</h3>
-            <p style="margin: 0; font-size: 15px; color: #4A5668">Job starts in two weeks. Bank, IRD, SIM and a place to live — fast, no guesswork.</p>
-          </div>
-        </article>
-        <!-- Families -->
-        <article class="dv-card" style="background: #fff; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
-          <div style="position: relative; aspect-ratio: 4 / 3; background: #EEF4E1">
-            <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Photo slot: family outside a new home" style="width: 100%; height: 100%; display: block">
-              <rect width="400" height="300" fill="#EEF4E1"></rect>
-              <rect x="0" y="220" width="400" height="80" fill="#80A33D" opacity=".5"></rect>
-              <path d="M90 220 V130 l80-60 80 60 V220z" fill="#fff"></path>
-              <path d="M80 134 l90-68 90 68" stroke="#E8613F" stroke-width="10" fill="none" stroke-linejoin="round"></path>
-              <rect x="150" y="170" width="40" height="50" fill="#3D60AC"></rect>
-              <circle cx="300" cy="150" r="26" fill="#F1C7A6"></circle><path d="M258 220 a42 42 0 0 1 84 0z" fill="#0AA493"></path>
-              <circle cx="345" cy="175" r="16" fill="#D9A27A"></circle><path d="M320 220 a25 25 0 0 1 50 0z" fill="#F4B942"></path>
-            </svg>
-            <span style="position: absolute; left: 12px; bottom: 12px; background: rgba(20,42,79,.75); color: #fff; font-size: 11px; border-radius: 6px; padding: 3px 8px">Photo: family, new home</span>
-          </div>
-          <div style="padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 6px">
-            <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-size: 20px; font-weight: 700; color: #142A4F">Relocating families</h3>
-            <p style="margin: 0; font-size: 15px; color: #4A5668">A van, a family-sized apartment and a walk around the school zone.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== WELCOME BOX ===== -->
-  <section id="box" style="padding: 96px 0">
-    <div class="dv-wrap dv-split">
-      <div style="position: relative">
-        <svg viewBox="0 0 560 460" role="img" aria-label="Illustration: the NZ Welcome Box, open, with adapter, SIM, snacks, tea and a transport card" style="width: 100%; height: auto; display: block">
-          <circle cx="280" cy="240" r="210" fill="#E3F4F1"></circle>
-          <!-- box body -->
-          <path d="M150 230 L280 290 L410 230 L410 380 L280 440 L150 380z" fill="#E8B04A"></path>
-          <path d="M150 230 L280 290 L280 440 L150 380z" fill="#D59A3A"></path>
-          <path d="M280 290 L410 230 L410 380 L280 440z" fill="#F0BF5C"></path>
-          <!-- lids -->
-          <path d="M150 230 L60 190 L190 130 L280 170z" fill="#F4C96B"></path>
-          <path d="M410 230 L500 190 L370 130 L280 170z" fill="#F7D98C"></path>
-          <!-- tape -->
-          <path d="M280 290 L280 440" stroke="#C98A2B" stroke-width="5"></path>
-          <!-- items popping out -->
-          <rect x="190" y="90" width="48" height="90" rx="8" fill="#0AA493"></rect>
-          <rect x="202" y="106" width="8" height="18" rx="2" fill="#fff"></rect><rect x="218" y="106" width="8" height="18" rx="2" fill="#fff"></rect>
-          <rect x="250" y="60" width="60" height="100" rx="8" fill="#142A4F"></rect>
-          <rect x="258" y="70" width="44" height="78" rx="4" fill="#5FD3C4"></rect>
-          <rect x="266" y="78" width="26" height="18" rx="2" fill="#F4B942"></rect>
-          <circle cx="360" cy="120" r="38" fill="#E8613F"></circle>
-          <path d="M340 120 q20 -20 40 0 q-20 20 -40 0z" fill="#fff" opacity=".9"></path>
-          <rect x="120" y="130" width="70" height="46" rx="8" fill="#3D60AC"></rect>
-          <rect x="130" y="140" width="50" height="8" rx="4" fill="#fff" opacity=".8"></rect>
-          <rect x="130" y="156" width="30" height="8" rx="4" fill="#F4B942"></rect>
-          <!-- kia ora tag -->
-          <g transform="translate(300,330)">
-            <rect x="-70" y="-22" width="140" height="44" rx="22" fill="#fff"></rect>
-            <text x="0" y="7" text-anchor="middle" font-family="Bricolage Grotesque, Rubik, sans-serif" font-size="22" font-weight="700" fill="#142A4F">Kia ora!</text>
-          </g>
-        </svg>
-        <span style="position: absolute; right: 8px; top: 8px; background: #142A4F; color: #fff; font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-weight: 700; font-size: 18px; border-radius: 999px; padding: 10px 18px">+ NZ$79</span>
-      </div>
-      <div style="display: flex; flex-direction: column; gap: 20px">
-        <span style="font-size: 13px; font-weight: 600; color: #087F72; letter-spacing: .08em; text-transform: uppercase">Add to any package</span>
-        <h2 style="margin: 0; font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-size: clamp(32px, 3.4vw, 46px); font-weight: 700; letter-spacing: -.02em; color: #142A4F; line-height: 1.05">The NZ Welcome Box, waiting on your bed.</h2>
-        <p style="margin: 0; font-size: 18px; color: #4A5668; max-width: 40ch">Because night one shouldn't involve hunting for a power adapter at 11pm.</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 8px">
-          <span style="background: #F3F1EC; border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 500">NZ power adapter</span>
-          <span style="background: #F3F1EC; border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 500">SIM / eSIM</span>
-          <span style="background: #F3F1EC; border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 500">Snacks &amp; noodles</span>
-          <span style="background: #F3F1EC; border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 500">Tea &amp; coffee</span>
-          <span style="background: #F3F1EC; border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 500">Toiletries</span>
-          <span style="background: #F3F1EC; border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 500">AT HOP guide</span>
-          <span style="background: #F3F1EC; border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 500">Bank &amp; IRD checklist</span>
-          <span style="background: #F3F1EC; border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 500">Emergency card</span>
-        </div>
-        <p style="margin: 0; font-size: 15px; color: #4A5668">India, China, Philippines, Vietnam and Korea editions include a few familiar things from home.</p>
-        <a href="welcome-box.html" class="dv-btn dv-btn-teal" style="align-self: flex-start">What's in the box</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== TRUST BAND ===== -->
-  <section id="trust" style="background: #142A4F; color: #DCE6F5; padding: 88px 0">
-    <div class="dv-wrap" style="display: flex; flex-direction: column; gap: 40px">
-      <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap">
-        <h2 style="margin: 0; font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-size: clamp(32px, 3.4vw, 46px); font-weight: 700; letter-spacing: -.02em; color: #fff; line-height: 1.05; max-width: 18ch">Straight talk. Trust is the whole product.</h2>
-        <p style="margin: 0; font-size: 17px; color: #B9C8E0; max-width: 34ch">We book, prepare and attend. Banks and Inland Revenue make the decisions — and we'll always say so.</p>
-      </div>
-      <div class="dv-trust">
-        <div style="background: #22407A; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
-          <span style="width: 52px; height: 52px; border-radius: 14px; background: #0AA493; display: inline-flex; align-items: center; justify-content: center"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16l20-7-9 9-2-5-5-2zm9 2 2 5 4-9"></path></svg></span>
-          <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-size: 20px; font-weight: 700; color: #fff">Every flight met</h3>
-          <p style="margin: 0; font-size: 15px; color: #B9C8E0">We track your flight. Delayed six hours? Your host is still there with your name on a sign.</p>
-        </div>
-        <div style="background: #22407A; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
-          <span style="width: 52px; height: 52px; border-radius: 14px; background: #3D60AC; display: inline-flex; align-items: center; justify-content: center"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></span>
-          <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-size: 20px; font-weight: 700; color: #fff">Your money is protected</h3>
-          <p style="margin: 0; font-size: 15px; color: #B9C8E0">Card payments via Stripe. We never see your card. Full refund if you cancel 14+ days out.</p>
-        </div>
-        <div style="background: #22407A; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
-          <span style="width: 52px; height: 52px; border-radius: 14px; background: #80A33D; display: inline-flex; align-items: center; justify-content: center"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"></path><path d="M9 8.5c0 3 3.5 6.5 6.5 6.5l1-1.5-2-1-1 1a5 5 0 0 1-3-3l1-1-1-2z"></path></svg></span>
-          <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-size: 20px; font-weight: 700; color: #fff">Real people, 7 days</h3>
-          <p style="margin: 0; font-size: 15px; color: #B9C8E0">One WhatsApp number, answered by hosts who made this same journey themselves.</p>
-        </div>
-        <div style="background: #22407A; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
-          <span style="width: 52px; height: 52px; border-radius: 14px; background: #E8613F; display: inline-flex; align-items: center; justify-content: center"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16h.01"></path></svg></span>
-          <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-size: 20px; font-weight: 700; color: #fff">No immigration advice</h3>
-          <p style="margin: 0; font-size: 15px; color: #B9C8E0">We're not licensed advisers and we won't pretend to be. Practical help only, said plainly.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== ONE TESTIMONIAL ===== -->
-  <section style="padding: 96px 0; background: #FBFBF9">
-    <div class="dv-wrap" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px">
-      <svg viewBox="0 0 48 40" width="48" height="40" aria-hidden="true"><path d="M0 40V22C0 10 6 3 18 0l3 6c-6 2-9 6-9 12h9v22H0zm27 0V22C27 10 33 3 45 0l3 6c-6 2-9 6-9 12h9v22H27z" fill="#0AA493"></path></svg>
-      <blockquote style="margin: 0; font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-size: clamp(26px, 2.8vw, 38px); font-weight: 600; color: #142A4F; line-height: 1.2; letter-spacing: -.015em; max-width: 26ch">“My son messaged me from the car before I had even stopped tracking the flight. That is what I paid for.”</blockquote>
-      <div style="display: flex; align-items: center; gap: 12px">
-        <span style="width: 44px; height: 44px; border-radius: 50%; background: #F1C7A6"></span>
-        <span style="font-size: 15px; color: #4A5668; text-align: left"><strong style="color: #142A4F; font-weight: 500">Parent, Hyderabad</strong><br>7-Day Starter · placeholder testimonial</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CTA BAND ===== -->
-  <section id="contact" style="padding: 0 0 96px">
-    <div class="dv-wrap">
-      <div style="background: #0AA493; border-radius: 28px; padding: 56px; display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; position: relative; overflow: hidden">
-        <svg viewBox="0 0 400 200" aria-hidden="true" style="position: absolute; right: -40px; bottom: -30px; width: 420px; height: auto; opacity: .18">
-          <path d="M0 160 C100 100 200 60 400 20" stroke="#fff" stroke-width="6" fill="none" stroke-dasharray="14 12"></path>
-          <path d="M400 20l-40 10 18-28z" fill="#fff"></path>
-        </svg>
-        <div style="display: flex; flex-direction: column; gap: 10px; max-width: 48ch; position: relative">
-          <h2 style="margin: 0; font-family: 'Bricolage Grotesque', Rubik, sans-serif; font-size: clamp(30px, 3vw, 42px); font-weight: 700; letter-spacing: -.02em; color: #fff; line-height: 1.05">Flying soon? Let's sort your first week.</h2>
-          <p style="margin: 0; font-size: 17px; color: #DFF5F1">Book in ten minutes. Change flight details any time up to 24 hours before you land.</p>
-        </div>
-        <div style="display: flex; gap: 12px; flex-wrap: wrap; position: relative">
-          <a href="book.html" class="dv-btn dv-btn-coral" style="min-height: 54px; padding: 14px 28px; font-size: 17px">Book my arrival</a>
-          <a data-wa href="#" class="dv-btn dv-btn-light" style="min-height: 54px; padding: 14px 28px; font-size: 17px">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"></path></svg>Ask on WhatsApp
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer style="background: #FBFBF9; border-top: 1px solid #DEE3EA; padding: 56px 0 32px">
-    <div class="dv-wrap" style="display: flex; flex-direction: column; gap: 40px">
-      <div class="dv-foot">
-        <div style="display: flex; flex-direction: column; gap: 14px">
-          <svg viewBox="0 0 300 56" height="36" role="img" aria-label="DreamVoyagers" style="height: 36px; width: auto; display: block">
-            <g transform="translate(2,2)">
-              <circle cx="26" cy="26" r="26" fill="#0AA493"></circle>
-              <path d="M10 33c10-2 20-10 31-20" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"></path>
-              <path d="M41 13l-6 13-5-5-6 2z" fill="#fff"></path>
-              <path d="M9 40c8 0 14-4 20-6" stroke="#F4B942" stroke-width="3" fill="none" stroke-linecap="round" opacity=".95"></path>
-            </g>
-            <text x="66" y="37" font-family="Bricolage Grotesque, Rubik, Arial, sans-serif" font-size="27" font-weight="700" fill="#142A4F" letter-spacing="-0.5">Dream<tspan fill="#0AA493">Voyagers</tspan></text>
-          </svg>
-          <p style="margin: 0; font-size: 15px; color: #4A5668; max-width: 40ch">Your first week in New Zealand, taken care of. A venture of the ANZ Pharma group, Auckland.</p>
-          <p style="margin: 0; font-size: 12px; color: #5E6A7C; max-width: 52ch">We provide practical arrival assistance and are not licensed immigration advisers. Bank accounts are approved by banks and IRD numbers issued by Inland Revenue.</p>
-        </div>
-        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px">
-          <strong style="font-family: 'Bricolage Grotesque', Rubik, sans-serif; color: #142A4F">Explore</strong>
-          <a href="#week" style="text-decoration: none; color: #1E2B3A">How it works</a>
-          <a href="packages.html" style="text-decoration: none; color: #1E2B3A">Packages &amp; pricing</a>
-          <a href="#box" style="text-decoration: none; color: #1E2B3A">NZ Welcome Box</a>
-          <a href="about.html" style="text-decoration: none; color: #1E2B3A">About us</a>
-        </div>
-        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px">
-          <strong style="font-family: 'Bricolage Grotesque', Rubik, sans-serif; color: #142A4F">Help</strong>
-          <a href="contact.html" style="text-decoration: none; color: #1E2B3A">Contact</a>
-          <a href="faq.html" style="text-decoration: none; color: #1E2B3A">FAQ</a>
-          <a href="refunds.html" style="text-decoration: none; color: #1E2B3A">Cancellation &amp; refunds</a>
-          <a href="terms.html" style="text-decoration: none; color: #1E2B3A">Terms · Privacy</a> · <a href="admin/login.html" style="text-decoration:none">Team sign in</a>
-        </div>
-        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #1E2B3A">
-          <strong style="font-family: 'Bricolage Grotesque', Rubik, sans-serif; color: #142A4F">Find us</strong>
-          <span>27E Smales Road, East Tamaki<br>Auckland 2013, New Zealand</span>
-          <a href="mailto:hello@dreamvoyagers.co.nz" style="text-decoration: none">hello@dreamvoyagers.co.nz</a>
-          <span>Mon–Sat 8am–8pm NZT</span>
-        </div>
-      </div>
-      <div style="display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13px; color: #5E6A7C; border-top: 1px solid #DEE3EA; padding-top: 20px">
-        <span>© 2026 DreamVoyagers Ltd. All rights reserved.</span>
-        <span>Payments processed securely by Stripe · Prices in NZD incl. GST</span>
-      </div>
-    </div>
-  </footer>
-
-</div>
-<a class="wa-float" data-wa href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.5c0 3 3.5 6.5 6.5 6.5l1-1.5-2-1-1 1a5 5 0 0 1-3-3l1-1-1-2z"/></svg><span>Chat on WhatsApp</span></a>
 </body>
 </html>
