@@ -24,6 +24,18 @@
     reset() { try { localStorage.removeItem(KEY); } catch (e) { } },
     nextRef() { const list = this.all(); const nums = list.map(b => parseInt(b.ref.split('-').pop(), 10)).filter(n => !isNaN(n)); const n = (nums.length ? Math.max(...nums) : 100) + 1; return `${DV.config.refPrefix}-${new Date().getFullYear()}-${String(n).padStart(5, '0')}`; }
   };
+  /* ---- prototype accounts (localStorage only; any password accepted) ---- */
+  const UKEY = 'dv_users_v1', SKEY = 'dv_session_v1', LKEY = 'dv_links_v1';
+  DV.auth = {
+    users() { try { return JSON.parse(localStorage.getItem(UKEY)) || []; } catch (e) { return []; } },
+    find(email) { return this.users().find(u => u.email === (email || '').toLowerCase()); },
+    register(u) { const list = this.users().filter(x => x.email !== u.email); list.push(u); localStorage.setItem(UKEY, JSON.stringify(list)); },
+    signIn(u) { localStorage.setItem(SKEY, JSON.stringify({ email: u.email, name: u.name })); },
+    signOut() { localStorage.removeItem(SKEY); },
+    current() { try { return JSON.parse(localStorage.getItem(SKEY)); } catch (e) { return null; } },
+    links() { try { return JSON.parse(localStorage.getItem(LKEY)) || []; } catch (e) { return []; } },
+    link(ref) { const l = this.links(); if (l.indexOf(ref) < 0) l.push(ref); localStorage.setItem(LKEY, JSON.stringify(l)); }
+  };
   DV.calcTotal = (pkgId, addons) => (DV.pkg(pkgId)?.price || 0) + (addons || []).reduce((s, a) => s + (DV.addon(a)?.price || 0), 0);
   DV.setStatus = (b, status, by, notify) => { b.status = status; b.history = b.history || []; b.history.push([new Date().toISOString(), status, by || 'system']); if (notify) { b.emails = b.emails || []; b.emails.push([new Date().toISOString(), notify]); } return b; };
 
@@ -49,24 +61,17 @@
     $$('[data-packages]').forEach(el => DV.renderPackages(el, el.dataset.packages));
     // FAQ
     $$('[data-faqs]').forEach(el => { el.innerHTML = DV.faqs.map(([q, a]) => `<details><summary>${q}</summary><p>${a}</p></details>`).join(''); });
+    // account link in header
+    const me = DV.auth.current();
+    $$('[data-account-link]').forEach(a => { if (me) { a.textContent = 'My journey'; a.href = DV.rel() + 'journey.html'; } });
     // year
     $$('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
   });
 
   DV.personalise = origin => {
     const o = DV.origins.find(x => x.id === origin); if (!o) return;
-    const msgs = {
-      IN: 'Vegetarian and Jain-friendly food packs, Indian grocery stores mapped, and hosts who know the India–Auckland routes.',
-      CN: 'Mandarin-speaking host on request, Asian supermarkets mapped, WeChat-friendly updates coming soon.',
-      PH: 'Filipino community introductions, Tagalog-speaking host on request, and halal options where needed.',
-      VN: 'Vietnamese grocery options and a host who has done this journey before.',
-      KR: 'Korean groceries mapped around Northcote and the CBD; KakaoTalk-friendly updates coming soon.',
-      JP: 'Japanese grocery options and quiet, well-reviewed accommodation choices.',
-      NP: 'Nepali community introductions and vegetarian-friendly packs.',
-      LK: 'Sri Lankan grocery options and community introductions.',
-      OT: 'Tell us where you are coming from and we will tailor the food pack and introductions.'
-    };
-    $$('[data-personal]').forEach(el => { el.textContent = msgs[origin] || msgs.OT; el.hidden = false; });
+    const msg = (DV.originNotes || {})[origin] || (DV.originNotes || {}).OTH || '';
+    $$('[data-personal]').forEach(el => { el.textContent = msg; el.hidden = !msg; });
   };
 
   const ICON_CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
@@ -81,7 +86,7 @@
         <div class="price">${DV.money(p.price)}</div>
         <div class="per">${p.days} · per person, incl. GST</div>
         <ul>${p.includes.slice(0, mode === 'compact' ? 4 : 99).map(i => `<li>${ICON_CHECK}<span>${i}</span></li>`).join('')}${mode === 'compact' ? '' : p.excludes.map(i => `<li class="no">${ICON_X}<span>${i}</span></li>`).join('')}</ul>
-        <a class="btn ${p.featured ? 'btn-primary' : 'btn-outline'} btn-block" href="${root}book.html?package=${p.id}">Book ${p.name}</a>
+        <a class="btn ${p.featured ? 'btn-primary' : 'btn-outline'} btn-block" href="${root}book.html?package=${p.id}" aria-label="Book ${p.name}">Book now</a>
       </article>`).join('');
   };
 })();

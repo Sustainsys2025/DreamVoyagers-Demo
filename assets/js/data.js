@@ -17,10 +17,25 @@ DV.config = {
 };
 
 DV.origins = [
-  { id: 'IN', name: 'India' }, { id: 'CN', name: 'China' }, { id: 'PH', name: 'Philippines' },
-  { id: 'VN', name: 'Vietnam' }, { id: 'KR', name: 'South Korea' }, { id: 'JP', name: 'Japan' },
-  { id: 'NP', name: 'Nepal' }, { id: 'LK', name: 'Sri Lanka' }, { id: 'OT', name: 'Somewhere else' }
+  { id: 'DEL', name: 'Delhi' }, { id: 'BOM', name: 'Mumbai' }, { id: 'BLR', name: 'Bengaluru' },
+  { id: 'HYD', name: 'Hyderabad' }, { id: 'MAA', name: 'Chennai' }, { id: 'CCU', name: 'Kolkata' },
+  { id: 'AMD', name: 'Ahmedabad' }, { id: 'PNQ', name: 'Pune' }, { id: 'COK', name: 'Kochi' },
+  { id: 'IXC', name: 'Chandigarh' }, { id: 'OTH', name: 'Elsewhere in India' }
 ];
+/* Launch market: India only. Other countries will be added here when bookings open for them. */
+DV.originNotes = {
+  DEL: 'Delhi flights usually connect through Singapore or Kuala Lumpur and land in Auckland mid-morning. Your host is at Door 2 before you clear customs; North Indian veg food pack by default.',
+  BOM: 'Mumbai connections land in Auckland between 10am and noon. Your host tracks the whole itinerary, not just the last leg.',
+  BLR: 'Bengaluru flights connect through Singapore and arrive mid-morning. Plenty of time for a SIM, a shower and a first walk before dark.',
+  HYD: 'Hyderabad connections arrive mid-morning. Most of our student bookings come from here — we know the AUT and UoA start dates well.',
+  MAA: 'Chennai flights connect through Singapore or Kuala Lumpur. South Indian veg food pack by default; tell us if you prefer otherwise.',
+  CCU: 'Kolkata connections usually route via Singapore or Bangkok and land late morning.',
+  AMD: 'Ahmedabad connections arrive mid-morning. Jain food pack available — just tick it in the booking form.',
+  PNQ: 'Pune travellers usually fly from Mumbai; tell us both flight numbers and we track the connection too.',
+  COK: 'Kochi connections via Singapore or Kuala Lumpur land late morning. Many nurses and healthcare workers start with us here.',
+  IXC: 'Chandigarh travellers usually connect through Delhi; we track the full itinerary.',
+  OTH: 'Wherever you start in India, tell us the full itinerary when you book and we plan the first week around when you land.'
+};
 
 DV.packages = [
   {
@@ -102,8 +117,8 @@ DV.seedBookings = () => [
     notes: [['2026-10-22T02:05:00Z', 'Sarneela', 'Room 14 at Empire Apartments confirmed, check-in from 2pm. Vegetarian pack ordered from Khyber Foods.'], ['2026-10-27T05:32:00Z', 'Sarneela', 'ANZ appointment Thu 6 Nov 10:30, Queen St branch. Reminded Aarav to bring passport + offer letter.']],
     emails: [['2026-10-21T09:14:10Z', 'Payment confirmation'], ['2026-10-21T09:14:12Z', 'Welcome & next steps'], ['2026-10-27T05:33:00Z', 'Accommodation confirmed'], ['2026-10-29T22:11:00Z', 'Pre-arrival instructions']] },
   { ref: 'DV-2026-00113', status: 'in_progress', pkg: 'premium', addons: [], total: 1199, created: '2026-10-24T14:40:00Z',
-    booker: { name: 'Li Wei', email: 'liwei@example.cn', phone: '+86 139 0000 0000', country: 'China', sameAsTraveller: true },
-    traveller: { name: 'Li Wei', email: 'liwei@example.cn', phone: '+86 139 0000 0000', nationality: 'China', dob: '2004-07-02', institution: 'University of Auckland', diet: 'No restrictions', access: '' },
+    booker: { name: 'Priyanka Nair', email: 'priyanka.n@example.com', phone: '+91 98450 00000', country: 'India', sameAsTraveller: true },
+    traveller: { name: 'Priyanka Nair', email: 'priyanka.n@example.com', phone: '+91 98450 00000', nationality: 'India', dob: '2004-07-02', institution: 'University of Auckland', diet: 'No restrictions', access: '' },
     arrival: { date: '2026-11-09', flight: 'CA783', time: '14:20', airport: 'AKL', notes: '' },
     payment: { status: 'succeeded', id: 'pi_demo_7Lm22', method: 'Mastercard •••• 5100', paidAt: '2026-10-24T14:42:00Z' },
     milestones: { pickup: true, accommodation: false, sim: true, food: false, bank: false, ird: false },
@@ -111,8 +126,8 @@ DV.seedBookings = () => [
     notes: [['2026-10-25T01:02:00Z', 'Sarneela', 'Waiting on studio availability at UniLodge; fallback Quest Newmarket.']],
     emails: [['2026-10-24T14:42:10Z', 'Payment confirmation'], ['2026-10-24T14:42:12Z', 'Welcome & next steps']] },
   { ref: 'DV-2026-00114', status: 'paid', pkg: 'family', addons: ['welcomebox', 'extra_pax'], total: 2123, created: '2026-10-27T18:05:00Z',
-    booker: { name: 'Maria Santos', email: 'maria.santos@example.ph', phone: '+63 917 000 0000', country: 'Philippines', sameAsTraveller: true },
-    traveller: { name: 'Maria Santos', email: 'maria.santos@example.ph', phone: '+63 917 000 0000', nationality: 'Philippines', dob: '1988-11-30', institution: 'Middlemore Hospital (employer)', diet: 'No restrictions', access: 'Travelling with two children (6 and 9) — booster seats please' },
+    booker: { name: 'Anjali Thomas', email: 'anjali.thomas@example.com', phone: '+91 98470 00000', country: 'India', sameAsTraveller: true },
+    traveller: { name: 'Anjali Thomas', email: 'anjali.thomas@example.com', phone: '+91 98470 00000', nationality: 'India', dob: '1988-11-30', institution: 'Middlemore Hospital (employer)', diet: 'No restrictions', access: 'Travelling with two children (6 and 9) — booster seats please' },
     arrival: { date: '2026-11-15', flight: 'PR218', time: '13:55', airport: 'AKL', notes: 'Husband arrives two weeks later.' },
     payment: { status: 'succeeded', id: 'pi_demo_9Pq40', method: 'Visa •••• 0005', paidAt: '2026-10-27T18:07:00Z' },
     milestones: { pickup: false, accommodation: false, sim: false, food: false, bank: false, ird: false },
@@ -120,15 +135,15 @@ DV.seedBookings = () => [
     notes: [],
     emails: [['2026-10-27T18:07:10Z', 'Payment confirmation'], ['2026-10-27T18:07:12Z', 'Welcome & next steps']] },
   { ref: 'DV-2026-00115', status: 'pending_payment', pkg: 'essential', addons: [], total: 399, created: '2026-10-29T06:30:00Z',
-    booker: { name: 'Nguyen Thi Lan', email: 'lan.nguyen@example.vn', phone: '+84 90 000 0000', country: 'Vietnam', sameAsTraveller: true },
-    traveller: { name: 'Nguyen Thi Lan', email: 'lan.nguyen@example.vn', phone: '+84 90 000 0000', nationality: 'Vietnam', dob: '2005-03-19', institution: 'Unitec', diet: 'Vegan', access: '' },
+    booker: { name: 'Rohan Mehta', email: 'rohan.mehta@example.com', phone: '+91 98250 00000', country: 'India', sameAsTraveller: true },
+    traveller: { name: 'Rohan Mehta', email: 'rohan.mehta@example.com', phone: '+91 98250 00000', nationality: 'India', dob: '2005-03-19', institution: 'Unitec', diet: 'Vegan', access: '' },
     arrival: { date: '2026-11-20', flight: 'VN—', time: '', airport: 'AKL', notes: 'Will confirm flight after ticket purchase.' },
     payment: { status: 'pending', id: 'cs_demo_abc', method: '', paidAt: null },
     milestones: { pickup: false, accommodation: false, sim: false, food: false, bank: false, ird: false },
     history: [['2026-10-29T06:30:00Z', 'pending_payment', 'system']], notes: [], emails: [['2026-10-29T06:30:05Z', 'Booking acknowledgement']] },
   { ref: 'DV-2026-00109', status: 'completed', pkg: 'starter', addons: ['welcomebox'], total: 778, created: '2026-09-30T11:00:00Z',
-    booker: { name: 'Kim Ji-ho', email: 'jiho.kim@example.kr', phone: '+82 10 0000 0000', country: 'South Korea', sameAsTraveller: true },
-    traveller: { name: 'Kim Ji-ho', email: 'jiho.kim@example.kr', phone: '+82 10 0000 0000', nationality: 'South Korea', dob: '2003-09-09', institution: 'Massey University (Albany)', diet: 'No restrictions', access: '' },
+    booker: { name: 'Karthik Iyer', email: 'karthik.iyer@example.com', phone: '+91 98400 00000', country: 'India', sameAsTraveller: true },
+    traveller: { name: 'Karthik Iyer', email: 'karthik.iyer@example.com', phone: '+91 98400 00000', nationality: 'India', dob: '2003-09-09', institution: 'Massey University (Albany)', diet: 'No restrictions', access: '' },
     arrival: { date: '2026-10-12', flight: 'KE129', time: '09:50', airport: 'AKL', notes: '' },
     payment: { status: 'succeeded', id: 'pi_demo_1Aa11', method: 'Visa •••• 4242', paidAt: '2026-09-30T11:02:00Z' },
     milestones: { pickup: true, accommodation: true, sim: true, food: true, bank: true, ird: true },

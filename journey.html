@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My journey · DreamVoyagers</title>
+<meta name="description" content="Track every step of your DreamVoyagers arrival.">
+<meta name="theme-color" content="#0AA493">
+<meta property="og:title" content="My journey · DreamVoyagers">
+<meta property="og:description" content="Track every step of your DreamVoyagers arrival.">
+<link rel="icon" href="./assets/img/favicon.png" type="image/png"><link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="./assets/css/styles.css">
+<link rel="stylesheet" href="./assets/css/theme-v2.css">
+</head>
+<body class="" data-root="./">
+<script src="./assets/js/data.js"></script><script src="./assets/js/app.js"></script>
+
+<div class="topbar"><div class="container"><span>Now booking arrivals from India into Auckland<span class="dv-long"> — other countries follow later</span>.</span><a data-wa href="#"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.5c0 3 3.5 6.5 6.5 6.5l1-1.5-2-1-1 1a5 5 0 0 1-3-3l1-1-1-2z"/></svg> WhatsApp us</a></div></div>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="./index.html" aria-label="DreamVoyagers home"><img src="./assets/img/logo.png" alt="DreamVoyagers" height="46"></a>
+    <ul class="nav-links">
+      <li><a href="./how-it-works.html">How it works</a></li>
+      <li><a href="./packages.html">Packages</a></li>
+      <li><a href="./welcome-box.html">Welcome Box</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./faq.html">FAQ</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-outline btn-sm" href="./account.html" data-account-link>Sign in</a>
+      <a class="btn btn-primary btn-sm" href="./book.html">Book my arrival</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<section class="section"><div class="container">
+  <div class="jn-head">
+    <div><div class="breadcrumb"><a href="index.html">Home</a> / My journey</div><h1>Kia ora, <span data-user-name>there</span></h1><p class="lead" data-user-sub>Here is where your arrival stands.</p></div>
+    <div class="flex"><a class="btn btn-outline btn-sm" href="book.html">New booking</a><button class="btn btn-ghost btn-sm" type="button" id="signout">Sign out</button></div>
+  </div>
+  <div id="welcome" class="alert alert-ok mb-2" hidden><div><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div><div><b>Account created.</b> Bookings made with this email appear below automatically.</div></div>
+  <div id="bookings"></div>
+  <div class="jn-link form-card mt-3">
+    <h3>Add a booking to this account</h3>
+    <form id="f-link" class="flex" novalidate><div class="field" style="margin:0;flex:1;min-width:220px"><label for="l-ref" class="sr-only">Booking reference</label><input id="l-ref" placeholder="Booking reference, e.g. DV-2026-00113"></div><button class="btn btn-teal" type="submit">Add booking</button></form>
+    <p class="small muted mt-1">Use this if you booked with a different email, or a parent booked for you.</p>
+  </div>
+</div></section>
+<script>
+(function(){
+  var u=DV.auth.current(); if(!u){ location.replace('account.html'); return; }
+  DV.$('[data-user-name]').textContent=u.name||u.email; if(DV.qs('welcome')) DV.$('#welcome').hidden=false;
+  DV.$('#signout').addEventListener('click',function(){ DV.auth.signOut(); location.href='index.html'; });
+  var STEPS=[['paid','Booked & paid'],['in_progress','Arranging'],['services_confirmed','Confirmed'],['ready_for_arrival','Ready for arrival'],['arrived','Arrived'],['completed','First week done']];
+  var CHECK=[['passport','Passport, visa and offer letter in hand luggage'],['funds','Proof of funds / bank statements printed'],['photos','Passport photos (bank and IRD need them)'],['cash','Some NZ dollars in cash for day one'],['adapter','Host number saved; WhatsApp works on roaming'],['flight','Flight number confirmed with DreamVoyagers']];
+  function mine(){ var email=u.email.toLowerCase(); var links=DV.auth.links(); return DV.store.all().filter(function(b){ return (b.booker&&b.booker.email||'').toLowerCase()===email||(b.traveller&&b.traveller.email||'').toLowerCase()===email||links.indexOf(b.ref)>=0; }); }
+  function render(){
+    var list=mine(); var el=DV.$('#bookings');
+    if(!list.length){ el.innerHTML='<div class="jn-empty"><h3>No bookings linked yet</h3><p>Bookings made with <b>'+u.email+'</b> appear here automatically. Add one by reference below, or <a href="book.html">make a new booking</a>.</p></div>'; return; }
+    el.innerHTML=list.map(function(b){
+      var pkg=DV.pkg(b.pkg)||{name:b.pkg}; var idx=STEPS.findIndex(function(s){return s[0]===b.status;}); if(b.status==='pending_payment') idx=-1;
+      var steps=STEPS.map(function(s,i){ return '<li class="'+(i<idx?'done':i===idx?'now':'')+'">'+s[1]+'</li>'; }).join('');
+      var ms=DV.milestones.map(function(m){ var on=b.milestones&&b.milestones[m[0]]; return '<li class="'+(on?'on':'')+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>'+m[1]+(on?'':' <span class="muted">— being arranged</span>')+'</li>'; }).join('');
+      var done=DV.milestones.filter(function(m){return b.milestones&&b.milestones[m[0]];}).length;
+      var ck=JSON.parse(localStorage.getItem('dv_check_'+b.ref)||'{}');
+      var checks=CHECK.map(function(c){ return '<label><input type="checkbox" data-ck="'+c[0]+'" data-ref="'+b.ref+'" '+(ck[c[0]]?'checked':'')+'> '+c[1]+'</label>'; }).join('');
+      var pay=b.status==='pending_payment'?'<div class="alert alert-warn mb-2"><div></div><div><b>Payment not completed.</b> <a href="checkout.html?ref='+b.ref+'">Finish paying</a> to start the arrangements.</div></div>':'';
+      var host=idx>=3?'<div class="jn-host"><img src="https://images.unsplash.com/photo-1787020308820-ed618b5ff86f?auto=format&fit=crop&w=120&q=70&fit=facearea&facepad=3&h=120" alt=""><div><b>Priya is your arrival host</b><span>Door 2, international arrivals · she will hold a sign with your name</span></div></div>':'<div class="jn-host muted"><div><b>Your host will be assigned</b><span>Name and photo appear here about three days before you land.</span></div></div>';
+      return '<article class="jn-card">'+
+        '<div class="jn-top"><div><span class="muted small">'+b.ref+'</span><h2>'+pkg.name+(b.addons&&b.addons.length?' + '+b.addons.map(function(a){return (DV.addon(a)||{name:a}).name;}).join(', '):'')+'</h2></div><span class="badge s-'+b.status+'">'+DV.statusLabel(b.status)+'</span></div>'+pay+
+        '<ol class="mini-steps jn-steps">'+steps+'</ol>'+
+        '<div class="jn-grid">'+
+          '<div><h4>Arrangements <span class="muted">('+done+' of '+DV.milestones.length+')</span></h4><ul class="mini-ms">'+ms+'</ul></div>'+
+          '<div><h4>Arrival</h4><dl class="kv"><dt>Traveller</dt><dd>'+(b.traveller&&b.traveller.name||'—')+'</dd><dt>Lands</dt><dd>'+DV.fmtDate(b.arrival&&b.arrival.date)+(b.arrival&&b.arrival.time?' · '+b.arrival.time:'')+'</dd><dt>Flight</dt><dd>'+(b.arrival&&b.arrival.flight||'—')+' → '+(b.arrival&&b.arrival.airport||'AKL')+'</dd><dt>Diet</dt><dd>'+(b.traveller&&b.traveller.diet||'—')+'</dd></dl>'+host+'</div>'+
+          '<div><h4>Before you fly <span class="muted">(your checklist)</span></h4><div class="milestones">'+checks+'</div></div>'+
+        '</div>'+
+        '<div class="flex jn-actions"><a class="btn btn-teal btn-sm" data-wa="Hi, this is about booking '+b.ref+'" href="#">Message my host team</a><a class="btn btn-outline btn-sm" href="booking-confirmed.html?ref='+b.ref+'">View confirmation</a><button class="btn btn-ghost btn-sm" type="button" data-flight="'+b.ref+'">Update flight details</button></div>'+
+      '</article>'; }).join('');
+    DV.$$('[data-wa]',el).forEach(function(a){ a.href=DV.wa(a.dataset.wa); a.target='_blank'; a.rel='noopener'; });
+    DV.$$('[data-ck]',el).forEach(function(c){ c.addEventListener('change',function(){ var k='dv_check_'+c.dataset.ref; var o=JSON.parse(localStorage.getItem(k)||'{}'); o[c.dataset.ck]=c.checked; localStorage.setItem(k,JSON.stringify(o)); }); });
+    DV.$$('[data-flight]',el).forEach(function(btn){ btn.addEventListener('click',function(){ var b=DV.store.get(btn.dataset.flight); var f=prompt('New flight number for '+b.ref+':', b.arrival.flight||''); if(f){ b.arrival.flight=f.trim(); DV.store.put(b); DV.toast('Flight updated — we will re-time your pickup.'); render(); } }); });
+  }
+  DV.$('#f-link').addEventListener('submit',function(e){ e.preventDefault(); var ref=DV.$('#l-ref').value.trim().toUpperCase(); if(!DV.store.get(ref)){ DV.toast('No booking found with that reference.'); return; } DV.auth.link(ref); DV.$('#l-ref').value=''; DV.toast('Booking '+ref+' added.'); render(); });
+  render();
+})();
+</script>
+
+<footer class="site-footer v2">
+  <div class="container">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <span class="ft-logo"><img src="./assets/img/logo-mark.png" alt="" height="36"><span>Dream<b>Voyagers</b></span></span>
+        <p>Your first week in New Zealand, taken care of. An arrival service for students, professionals and families flying from India to Auckland.</p>
+        <p class="disclaimer">We provide practical arrival assistance and are not licensed immigration advisers. Bank accounts are approved by banks and IRD numbers issued by Inland Revenue; we help you prepare and attend, we cannot guarantee outcomes.</p>
+      </div>
+      <nav class="ft-links" aria-label="Footer">
+        <h4>Explore</h4>
+        <a href="./how-it-works.html">How it works</a><a href="./packages.html">Packages &amp; pricing</a><a href="./welcome-box.html">Welcome Box</a><a href="./about.html">About</a><a href="./faq.html">FAQ</a>
+      </nav>
+      <nav class="ft-links" aria-label="Help">
+        <h4>Help</h4>
+        <a href="./account.html">My account</a><a href="./contact.html">Contact</a><a href="./refunds.html">Cancellation &amp; refunds</a><a href="./terms.html">Terms</a><a href="./privacy.html">Privacy</a><a href="./admin/login.html">Team sign in</a>
+      </nav>
+      <div class="ft-contact">
+        <h4>Find us</h4>
+        <span>27E Smales Road, East Tamaki<br>Auckland 2013, New Zealand</span>
+        <a href="mailto:hello@dreamvoyagers.co.nz">hello@dreamvoyagers.co.nz</a>
+        <span>+64 9 000 0000 <span class="muted">(placeholder)</span></span>
+        <a data-wa href="#">WhatsApp, 7 days</a>
+        <span>Mon–Sat 8am–8pm NZT<br>2:30am–2:30pm IST</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> DreamVoyagers Ltd — a venture of the ANZ Pharma group, Auckland.</span>
+      <span>Payments by Stripe · Prices in NZD incl. GST · Photos: <a href="https://unsplash.com" rel="noopener">Unsplash</a></span>
+    </div>
+  </div>
+</footer>
+<a class="wa-float" data-wa href="#"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.5c0 3 3.5 6.5 6.5 6.5l1-1.5-2-1-1 1a5 5 0 0 1-3-3l1-1-1-2z"/></svg><span>Chat on WhatsApp</span></a>
+
+</body>
+</html>

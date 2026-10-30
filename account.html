@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign in or create an account · DreamVoyagers</title>
+<meta name="description" content="Sign in to DreamVoyagers to track your arrival journey.">
+<meta name="theme-color" content="#0AA493">
+<meta property="og:title" content="Sign in or create an account · DreamVoyagers">
+<meta property="og:description" content="Sign in to DreamVoyagers to track your arrival journey.">
+<link rel="icon" href="./assets/img/favicon.png" type="image/png"><link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="./assets/css/styles.css">
+<link rel="stylesheet" href="./assets/css/theme-v2.css">
+</head>
+<body class="" data-root="./">
+<script src="./assets/js/data.js"></script><script src="./assets/js/app.js"></script>
+
+<div class="topbar"><div class="container"><span>Now booking arrivals from India into Auckland<span class="dv-long"> — other countries follow later</span>.</span><a data-wa href="#"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.5c0 3 3.5 6.5 6.5 6.5l1-1.5-2-1-1 1a5 5 0 0 1-3-3l1-1-1-2z"/></svg> WhatsApp us</a></div></div>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="./index.html" aria-label="DreamVoyagers home"><img src="./assets/img/logo.png" alt="DreamVoyagers" height="46"></a>
+    <ul class="nav-links">
+      <li><a href="./how-it-works.html">How it works</a></li>
+      <li><a href="./packages.html">Packages</a></li>
+      <li><a href="./welcome-box.html">Welcome Box</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./faq.html">FAQ</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-outline btn-sm" href="./account.html" data-account-link>Sign in</a>
+      <a class="btn btn-primary btn-sm" href="./book.html">Book my arrival</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<section class="section"><div class="container auth-wrap">
+  <div class="form-card auth-card">
+    <div class="auth-tabs" role="tablist">
+      <button type="button" class="active" data-tab="signin" role="tab">Sign in</button>
+      <button type="button" data-tab="register" role="tab">Create account</button>
+    </div>
+    <form id="f-signin" class="auth-form active" novalidate>
+      <div class="field"><label for="s-email">Email</label><input id="s-email" type="email" required autocomplete="email"><span class="err">Please enter the email you booked with.</span></div>
+      <div class="field"><label for="s-pass">Password</label><input id="s-pass" type="password" required autocomplete="current-password"><span class="err">Please enter your password.</span></div>
+      <div class="form-actions"><a class="small" href="#" id="forgot">Forgot password?</a><button class="btn btn-primary" type="submit">Sign in</button></div>
+      <p class="alert alert-demo mt-3" style="display:block"><b>Prototype:</b> any password works. Try <code>rajesh.sharma@example.com</code> to see a booking in progress, or create an account with the email you used to book.</p>
+    </form>
+    <form id="f-register" class="auth-form" novalidate>
+      <div class="form-row">
+        <div class="field"><label for="r-name">Full name</label><input id="r-name" required autocomplete="name"><span class="err">Required.</span></div>
+        <div class="field"><label for="r-phone">Mobile (with country code)</label><input id="r-phone" placeholder="+91 …" autocomplete="tel"></div>
+      </div>
+      <div class="field"><label for="r-email">Email</label><input id="r-email" type="email" required autocomplete="email"><span class="hint">Use the same email as your booking so we can link them.</span><span class="err">Please enter a valid email.</span></div>
+      <div class="form-row">
+        <div class="field"><label for="r-pass">Password</label><input id="r-pass" type="password" required minlength="8" autocomplete="new-password"><span class="err">At least 8 characters.</span></div>
+        <div class="field"><label for="r-city">City you are flying from</label><input id="r-city" placeholder="e.g. Hyderabad"></div>
+      </div>
+      <div class="field"><label for="r-role">I am</label><select id="r-role"><option value="traveller">The person travelling</option><option value="parent">A parent or family member booking for someone</option><option value="agent">An education agent</option></select></div>
+      <label class="check"><input type="checkbox" id="r-consent" required><span>I agree to the <a href="terms.html">terms</a> and <a href="privacy.html">privacy policy</a>.</span></label>
+      <div class="form-actions"><span class="muted small">Prototype — no email is sent.</span><button class="btn btn-primary" type="submit">Create account</button></div>
+    </form>
+  </div>
+  <aside class="auth-side">
+    <h3>What you can do once signed in</h3>
+    <ul class="fact-list">
+      <li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>See each part of your arrival confirmed, step by step</span></li>
+      <li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Get your host's name, photo and the exact meeting point</span></li>
+      <li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Tick off your pre-departure checklist</span></li>
+      <li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Update your flight details up to 24 hours before landing</span></li>
+      <li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Share the same view with a parent or family member</span></li>
+    </ul>
+    <hr class="hr">
+    <p class="small muted">Booked but no account yet? Create one with the email on your booking and it links automatically. You can also add a booking by its reference (e.g. DV-2026-00112) once signed in.</p>
+  </aside>
+</div></section>
+<script>
+(function(){
+  var qs=new URLSearchParams(location.search);
+  function show(t){ document.querySelectorAll('.auth-tabs button').forEach(function(b){b.classList.toggle('active',b.dataset.tab===t);}); document.querySelectorAll('.auth-form').forEach(function(f){f.classList.toggle('active',f.id==='f-'+t);}); }
+  document.querySelectorAll('.auth-tabs button').forEach(function(b){ b.addEventListener('click',function(){show(b.dataset.tab);}); });
+  if(qs.get('mode')==='register') show('register');
+  function valid(form){ var ok=true; form.querySelectorAll('[required]').forEach(function(i){ var f=i.closest('.field'); var bad=i.type==='checkbox'?!i.checked:(!i.value.trim()||(i.type==='email'&&!/.+@.+\..+/.test(i.value))||(i.minLength>0&&i.value.length<i.minLength)); if(f) f.classList.toggle('error',bad); if(bad) ok=false; }); return ok; }
+  document.getElementById('f-signin').addEventListener('submit',function(e){ e.preventDefault(); if(!valid(this)) return; var email=document.getElementById('s-email').value.trim().toLowerCase(); var bk=DV.store.all().find(function(b){return (b.booker&&b.booker.email||'').toLowerCase()===email||(b.traveller&&b.traveller.email||'').toLowerCase()===email;}); var nm=bk?((bk.booker.email||'').toLowerCase()===email?bk.booker.name:bk.traveller.name):email.split('@')[0]; var u=DV.auth.find(email)||{name:nm,email:email}; DV.auth.signIn(u); location.href='journey.html'; });
+  document.getElementById('f-register').addEventListener('submit',function(e){ e.preventDefault(); if(!valid(this)) return; var u={name:document.getElementById('r-name').value.trim(),email:document.getElementById('r-email').value.trim().toLowerCase(),phone:document.getElementById('r-phone').value.trim(),city:document.getElementById('r-city').value.trim(),role:document.getElementById('r-role').value,created:new Date().toISOString()}; DV.auth.register(u); DV.auth.signIn(u); location.href='journey.html?welcome=1'; });
+  document.getElementById('forgot').addEventListener('click',function(e){ e.preventDefault(); DV.toast('Prototype: a reset link would be emailed to you.'); });
+})();
+</script>
+
+<footer class="site-footer v2">
+  <div class="container">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <span class="ft-logo"><img src="./assets/img/logo-mark.png" alt="" height="36"><span>Dream<b>Voyagers</b></span></span>
+        <p>Your first week in New Zealand, taken care of. An arrival service for students, professionals and families flying from India to Auckland.</p>
+        <p class="disclaimer">We provide practical arrival assistance and are not licensed immigration advisers. Bank accounts are approved by banks and IRD numbers issued by Inland Revenue; we help you prepare and attend, we cannot guarantee outcomes.</p>
+      </div>
+      <nav class="ft-links" aria-label="Footer">
+        <h4>Explore</h4>
+        <a href="./how-it-works.html">How it works</a><a href="./packages.html">Packages &amp; pricing</a><a href="./welcome-box.html">Welcome Box</a><a href="./about.html">About</a><a href="./faq.html">FAQ</a>
+      </nav>
+      <nav class="ft-links" aria-label="Help">
+        <h4>Help</h4>
+        <a href="./account.html">My account</a><a href="./contact.html">Contact</a><a href="./refunds.html">Cancellation &amp; refunds</a><a href="./terms.html">Terms</a><a href="./privacy.html">Privacy</a><a href="./admin/login.html">Team sign in</a>
+      </nav>
+      <div class="ft-contact">
+        <h4>Find us</h4>
+        <span>27E Smales Road, East Tamaki<br>Auckland 2013, New Zealand</span>
+        <a href="mailto:hello@dreamvoyagers.co.nz">hello@dreamvoyagers.co.nz</a>
+        <span>+64 9 000 0000 <span class="muted">(placeholder)</span></span>
+        <a data-wa href="#">WhatsApp, 7 days</a>
+        <span>Mon–Sat 8am–8pm NZT<br>2:30am–2:30pm IST</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> DreamVoyagers Ltd — a venture of the ANZ Pharma group, Auckland.</span>
+      <span>Payments by Stripe · Prices in NZD incl. GST · Photos: <a href="https://unsplash.com" rel="noopener">Unsplash</a></span>
+    </div>
+  </div>
+</footer>
+<a class="wa-float" data-wa href="#"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.5c0 3 3.5 6.5 6.5 6.5l1-1.5-2-1-1 1a5 5 0 0 1-3-3l1-1-1-2z"/></svg><span>Chat on WhatsApp</span></a>
+
+</body>
+</html>
