@@ -22,11 +22,12 @@ no build step, no server — **open `index.html` in any browser** (double-click)
 
 ## v2 redesign (Oct 2026) — India launch
 - All seven public pages redesigned: compact layout, quieter type scale, photography instead of illustrations. Shared overrides in `assets/css/theme-v2.css` (loaded on every page after `styles.css`), home-only styles in `assets/css/home.css`. Previous versions kept in `_previous/`.
-- **Launch market is India only.** `DV.origins` in `data.js` now lists Indian cities (with per-city notes in `DV.originNotes`); the booking form offers India / "Other (bookings open later)"; copy, food packs and the Welcome Box are written for arrivals from India. To open another country later: add it to `DV.origins`/`DV.originNotes`, the booking selects and the topbar line.
+- **All nationalities.** `DV.origins` in `data.js` lists the origin countries shown as chips on the home page, with a per-country note in `DV.originNotes` (food packs, language, typical landing time). Add a country in both places and in the booking form's country/nationality selects.
+- **Independent business.** DreamVoyagers is presented as its own company — no group affiliation is mentioned anywhere on the site. The ANZ Pharma colour palette is retained as the brand theme only. Street address is a `[Street address]` placeholder.
 - **Photos** are free Unsplash images, hot-linked from `images.unsplash.com` (Unsplash licence: free for commercial use, no attribution required; a credit link is in the footer). They need an internet connection to display. Before launch, download and self-host them under `assets/img/photos/`, or replace with your own photography — the slots are the `<img>` tags on each page.
 
 ## Brand
-- Palette anchored to ANZ Pharma: teal `#0AA493`, blue `#3D60AC`, plus coral `#E8613F` (primary action only), fern `#80A33D` (confirmed/included), sun `#F4B942`.
+- Palette (teal/blue theme carried over from the original brief): teal `#0AA493`, blue `#3D60AC`, plus coral `#E8613F` (primary action only), fern `#80A33D` (confirmed/included), sun `#F4B942`.
 - Type: **Bricolage Grotesque** (headings) + **Rubik** (body, as on anzpharma.co.nz), loaded from Google Fonts with system fallbacks.
 - Logo: the supplied artwork from `../Logos/` — `assets/img/logo.png` (full wordmark, headers), `logo-mark.png` (globe only, used with text in the dark footer/admin), `favicon.png` and `apple-touch-icon.png`. Skyline and illustrations are SVG in `assets/img/` (illustrations are placeholders — swap for photography; each slot is labelled on the page).
 

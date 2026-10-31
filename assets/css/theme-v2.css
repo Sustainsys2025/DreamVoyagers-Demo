@@ -18,8 +18,11 @@ h4 { font-size: 1rem; }
 .btn-lg { padding: .8rem 1.35rem; font-size: 1rem; }
 .btn-sm { padding: .45rem .8rem; font-size: .88rem; }
 .nav { height: 64px; }
-.brand img { height: 72px; width: auto; display: block; }
-.nav { height: 86px; }
+.brand img { height: 66px; width: auto; display: block; }
+.brand { gap: .6rem; }
+.brand-word { font-family: var(--font-display); font-weight: 700; font-size: 1.7rem; letter-spacing: -.02em; color: var(--navy); line-height: 1; }
+.brand-word b { color: var(--teal); font-weight: 700; }
+.nav { height: 88px; }
 .nav-links a { font-size: .93rem; padding: .45rem .7rem; border-radius: var(--r-sm); }
 .topbar { font-size: .82rem; }
 .chip { border-radius: var(--r-sm); padding: .4rem .75rem; font-size: .88rem; }
@@ -143,8 +146,13 @@ h4 { font-size: 1rem; }
   .topbar a { white-space: nowrap; flex: none; }
   .topbar a svg { width: 15px; height: 15px; }
   .nav { height: 58px; }
-  .brand img { height: 50px; }
-  .nav { height: 66px; }
+  .brand img { height: 44px; }
+  .brand { gap: .35rem; min-width: 0; }
+  .brand-word { font-size: .98rem; white-space: nowrap; }
+  .nav { height: 62px; gap: .4rem; }
+  .nav-cta { gap: .3rem; flex: none; }
+  .nav-cta .btn-primary { padding: .4rem .55rem; font-size: .78rem; }
+  .nav-toggle { padding: .35rem .45rem; }
   .nav-cta .btn-primary { padding: .45rem .75rem; font-size: .85rem; }
   .nav-toggle { padding: .4rem .5rem; }
   h1 { font-size: 1.75rem; }
@@ -205,3 +213,52 @@ h4 { font-size: 1rem; }
 .jn-empty { background: #fff; border: 1px dashed var(--line); border-radius: var(--r-md); padding: 2rem; text-align: center; }
 .jn-link h3 { font-size: 1.05rem; margin-bottom: .6rem; }
 @media (max-width: 900px) { .auth-wrap, .hm-track { grid-template-columns: 1fr; } .jn-grid { grid-template-columns: 1fr; } .mini-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem .35rem; } }
+
+/* ---- v3: tighter rhythm, quieter chrome ---- */
+.section { padding: clamp(2rem, 4vw, 3rem) 0; }
+h2 { font-size: clamp(1.35rem, 2vw, 1.65rem); letter-spacing: -.01em; }
+.lead { font-size: 1rem; }
+.section-head { margin-bottom: 1.25rem; }
+.hm-kicker { font-size: .74rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--teal-dark); display: block; margin-bottom: .6rem; }
+.topbar { font-size: .8rem; }
+.topbar .container { padding: .3rem 0; }
+.site-header { border-bottom: 1px solid var(--line); box-shadow: 0 1px 0 rgba(20,42,79,.03); }
+.btn { font-size: .93rem; }
+.btn-lg { padding: .75rem 1.25rem; font-size: .97rem; }
+.tile, .hm-pkg, .hm-tile, .hm-day, .jn-card, .form-card, .summary, .quote, .pkg { box-shadow: none; }
+.tile { padding: 1rem 1.1rem; }
+.tile h3 { font-size: 1rem; margin-bottom: .25rem; }
+.tile p { font-size: .9rem; }
+.page-hero.has-photo { min-height: 240px; }
+.page-hero.has-photo .container { padding: 2rem 0; }
+.page-hero.has-photo h1 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); }
+.page-hero.has-photo .lead { font-size: .97rem; }
+.hero-facts { margin-top: 1rem; }
+.page-hero.journey { padding: 1.75rem 0 2rem; }
+.page-hero.journey h1 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); }
+.journey-head { margin-bottom: 1.5rem; }
+.journey-track .node { width: 42px; height: 42px; }
+.journey-track::before { top: 20px; }
+.journey-track .node svg { width: 20px; height: 20px; }
+.steps { gap: 1rem 1.5rem; }
+.step h3 { font-size: 1rem; }
+.step p { font-size: .92rem; }
+.cta-band { padding: clamp(1.4rem, 3vw, 2rem); }
+.cta-band h2 { font-size: 1.4rem; margin-bottom: .3rem; }
+.cta-band p { font-size: .95rem; margin: 0; }
+.box-list { margin: .6rem 0; }
+.compare th, .compare td { padding: .55rem .75rem; font-size: .88rem; }
+.grid { gap: 1rem; }
+.site-footer.v2 { padding: 1.6rem 0 .9rem; }
+.ft-grid { gap: 1rem 2rem; }
+
+/* Top bar links (WhatsApp + team sign in) */
+.topbar-links { display: inline-flex; gap: 1.1rem; align-items: center; flex: none; }
+.topbar-links a { display: inline-flex; align-items: center; gap: .35rem; white-space: nowrap; }
+.topbar-links svg { width: 14px; height: 14px; }
+.topbar .team-link { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.22); border-radius: var(--r-sm); padding: .15rem .55rem; }
+.topbar .team-link:hover { background: rgba(255,255,255,.2); text-decoration: none; }
+@media (max-width: 700px) { .topbar-links { gap: .5rem; } .topbar-links a span { display: none; } .topbar .team-link { padding: .2rem .4rem; } .topbar-links svg { width: 16px; height: 16px; } }
+
+@media (max-width: 360px) { .brand-word { display: none; } }
+@media (max-width: 700px) { .nav-cta .btn.btn-primary { padding: .4rem .55rem; font-size: .78rem; } .nav-cta .btn.btn-outline { display: none; } }

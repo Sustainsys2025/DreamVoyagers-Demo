@@ -16,10 +16,10 @@
 <body class="" data-root="./">
 <script src="./assets/js/data.js"></script><script src="./assets/js/app.js"></script>
 
-<div class="topbar"><div class="container"><span>Now booking arrivals from India into Auckland<span class="dv-long"> — other countries follow later</span>.</span><a data-wa href="#"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.5c0 3 3.5 6.5 6.5 6.5l1-1.5-2-1-1 1a5 5 0 0 1-3-3l1-1-1-2z"/></svg> WhatsApp us</a></div></div>
+<div class="topbar"><div class="container"><span>Arriving in Auckland? Book before you fly<span class="dv-long"> — we meet every flight we are booked on</span>.</span><span class="topbar-links"><a data-wa href="#"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.5c0 3 3.5 6.5 6.5 6.5l1-1.5-2-1-1 1a5 5 0 0 1-3-3l1-1-1-2z"/></svg> <span>WhatsApp us</span></a><a class="team-link" href="./admin/login.html"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> <span>Team sign in</span></a></span></div></div>
 <header class="site-header">
   <div class="container nav">
-    <a class="brand" href="./index.html" aria-label="DreamVoyagers home"><img src="./assets/img/logo.png" alt="DreamVoyagers" height="46"></a>
+    <a class="brand" href="./index.html" aria-label="DreamVoyagers home"><img src="./assets/img/logo-mark.png" alt="" height="66"><span class="brand-word">Dream<b>Voyagers</b></span></a>
     <ul class="nav-links">
       <li><a href="./how-it-works.html">How it works</a></li>
       <li><a href="./packages.html">Packages</a></li>
@@ -48,7 +48,7 @@
 <section class="section"><div class="container">
   <div class="packages" data-packages="compact"></div>
   <p class="small muted mt-2">Headline inclusions shown — the full list for every package is in the comparison table below.</p>
-  <p class="small muted mt-3">Prices are placeholders from the launch plan and will be confirmed before the service goes live. You pay in NZ dollars; your bank converts from rupees at its own rate. Group and education-agent rates available on request.</p>
+  <p class="small muted mt-3">Prices are indicative for launch and will be confirmed before the service goes live. You pay in NZ dollars; your bank converts from your own currency at its rate. Group and education-agent rates available on request.</p>
 </div></section>
 <section class="section section-tint"><div class="container">
   <div class="section-head"><h2>Compare what's included</h2></div>
@@ -56,7 +56,7 @@
   <tbody id="compare-body"></tbody></table></div>
   <script>
   (function(){
-    var rows=[['Meet &amp; greet at Auckland Airport',1,1,1,1,1],['Private transfer to accommodation',1,1,1,1,1],['NZ SIM or eSIM, activated',1,1,1,1,1],['WhatsApp support',['7 days','7 days','14 days','14 days','30 days']],['Accommodation included',[0,'7 nights, shared','7 nights, private','7 nights, family apt','7 nights + 3 weeks help']],['First-week food pack (veg / Jain)',0,1,1,1,1],['Bank &amp; IRD appointments booked',0,1,1,1,1],['Accompanied to appointments',0,0,1,1,1],['Campus / workplace orientation',0,0,1,1,1],['Long-term flat search',0,0,'2 viewings','2 viewings','Until found'],['School-zone walk &amp; enrolment help',0,0,0,1,1],['Monthly check-ins',0,0,0,0,1]];
+    var rows=[['Meet &amp; greet at Auckland Airport',1,1,1,1,1],['Private transfer to accommodation',1,1,1,1,1],['NZ SIM or eSIM, activated',1,1,1,1,1],['WhatsApp support',['7 days','7 days','14 days','14 days','30 days']],['Accommodation included',[0,'7 nights, shared','7 nights, private','7 nights, family apt','7 nights + 3 weeks help']],['First-week food pack (any diet)',0,1,1,1,1],['Bank &amp; IRD appointments booked',0,1,1,1,1],['Accompanied to appointments',0,0,1,1,1],['Campus / workplace orientation',0,0,1,1,1],['Long-term flat search',0,0,'2 viewings','2 viewings','Until found'],['School-zone walk &amp; enrolment help',0,0,0,1,1],['Monthly check-ins',0,0,0,0,1]];
     var t=document.getElementById('compare-body'); var h='';
     rows.forEach(function(r){ var cells=Array.isArray(r[1])&&r.length===2?r[1]:r.slice(1); h+='<tr><th>'+r[0]+'</th>'+cells.map(function(c){ if(c===1)return '<td class="c yes">✓</td>'; if(c===0)return '<td class="c no">—</td>'; return '<td class="c">'+c+'</td>'; }).join('')+'</tr>'; });
     t.innerHTML=h;
@@ -66,7 +66,7 @@
 <section class="section"><div class="container">
   <div class="section-head"><h2>Add-ons</h2><p>Add any of these during booking.</p></div>
   <div class="grid grid-3">
-    <div class="tile"><h3>NZ Welcome Box <span class="muted" style="font-weight:500">· NZ$79</span></h3><p>Power adapter, toiletries, chai and snacks, ready meals, water bottle, transport guide and your bank/IRD checklist — waiting in your room.</p></div>
+    <div class="tile"><h3>NZ Welcome Box <span class="muted" style="font-weight:500">· NZ$79</span></h3><p>Power adapter, toiletries, tea, coffee and snacks, ready meals, water bottle, transport guide and your bank/IRD checklist — waiting in your room.</p></div>
     <div class="tile"><h3>Extra night of accommodation <span class="muted" style="font-weight:500">· NZ$65</span></h3><p>Per night, same room, subject to availability.</p></div>
     <div class="tile"><h3>Additional traveller at pickup <span class="muted" style="font-weight:500">· NZ$45</span></h3><p>A friend or family member on the same flight.</p></div>
   </div>
@@ -79,7 +79,7 @@
     <div class="ft-grid">
       <div class="ft-brand">
         <span class="ft-logo"><img src="./assets/img/logo-mark.png" alt="" height="36"><span>Dream<b>Voyagers</b></span></span>
-        <p>Your first week in New Zealand, taken care of. An arrival service for students, professionals and families flying from India to Auckland.</p>
+        <p>Your first week in New Zealand, taken care of. An arrival service for international students, skilled professionals and families landing in Auckland.</p>
         <p class="disclaimer">We provide practical arrival assistance and are not licensed immigration advisers. Bank accounts are approved by banks and IRD numbers issued by Inland Revenue; we help you prepare and attend, we cannot guarantee outcomes.</p>
       </div>
       <nav class="ft-links" aria-label="Footer">
@@ -92,15 +92,15 @@
       </nav>
       <div class="ft-contact">
         <h4>Find us</h4>
-        <span>27E Smales Road, East Tamaki<br>Auckland 2013, New Zealand</span>
+        <span>[Street address]<br>Auckland, New Zealand</span>
         <a href="mailto:hello@dreamvoyagers.co.nz">hello@dreamvoyagers.co.nz</a>
         <span>+64 9 000 0000 <span class="muted">(placeholder)</span></span>
         <a data-wa href="#">WhatsApp, 7 days</a>
-        <span>Mon–Sat 8am–8pm NZT<br>2:30am–2:30pm IST</span>
+        <span>Mon–Sat 8am–8pm NZT</span>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span data-year></span> DreamVoyagers Ltd — a venture of the ANZ Pharma group, Auckland.</span>
+      <span>© <span data-year></span> DreamVoyagers Ltd, Auckland, New Zealand. All rights reserved.</span>
       <span>Payments by Stripe · Prices in NZD incl. GST · Photos: <a href="https://unsplash.com" rel="noopener">Unsplash</a></span>
     </div>
   </div>
