@@ -172,7 +172,7 @@ h4 { font-size: 1rem; }
 
 /* Package grid (packages page) */
 .packages { grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)) !important; }
-@media (min-width: 1100px) { .packages { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; } .pkg { padding: 1.1rem; } }
+@media (min-width: 1100px) { .packages { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; } .pkg { padding: 1.1rem; } }
 .pkg .btn { white-space: normal; }
 
 /* ---- Accounts & journey tracker (prototype) ---- */

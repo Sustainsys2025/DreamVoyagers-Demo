@@ -1,5 +1,5 @@
 /* DreamVoyagers — demo data & configuration
-   All prices are indicative placeholders from the business concept; confirm before launch. */
+   Package prices confirmed by the client for launch (Nov 2026); add-on prices still indicative. */
 window.DV = window.DV || {}; var DV = window.DV;
 
 DV.config = {
@@ -40,38 +40,31 @@ DV.originNotes = {
 DV.packages = [
   {
     id: 'essential', name: 'Essential Arrival', price: 399, days: 'Day 1',
-    for: 'You have accommodation sorted and just need a safe, simple landing.',
-    tagline: 'Met at the airport, connected and oriented on day one.',
-    includes: ['Meet & greet at Auckland Airport', 'Private transfer to your accommodation', 'NZ SIM or eSIM, activated', 'Arrival briefing: transport, groceries, emergency contacts', 'WhatsApp support for 7 days'],
-    excludes: ['Accommodation', 'Food starter pack', 'Bank & IRD assistance']
+    for: 'A safe, simple first night after a long flight.',
+    tagline: 'Met at the airport, a private room for the night, connected and fed.',
+    includes: ['Meet & greet at Auckland Airport', 'Transfer to your accommodation', '1 night in a private room', 'NZ SIM or eSIM, activated', 'One meal on arrival (veg, non-veg or halal)', 'Arrival briefing and essentials pack (toiletries)', 'NZ Traveller Declaration (NZTD) assistance', 'Weekly check-in calls for 4 weeks'],
+    excludes: ['Bank & IRD appointments', 'Shopping trip and college orientation']
   },
   {
-    id: 'starter', name: '7-Day Starter', price: 699, days: 'Days 1–7', featured: true,
+    id: 'threeday', name: '3-Day Starter', price: 799, days: 'Days 1–3',
+    for: 'A few days to settle in and get your bank and IRD started.',
+    tagline: 'Three nights, a daily meal and someone beside you at the bank.',
+    includes: ['Everything in Essential Arrival', '3 nights in vetted accommodation', 'One meal a day (veg, non-veg or halal)', 'Accompanied bank & IRD appointments'],
+    excludes: ['Shopping trip', 'College / campus orientation']
+  },
+  {
+    id: 'starter', name: '7-Day Starter', price: 1499, days: 'Days 1–7', featured: true,
     for: 'Most students. Everything for a confident first week.',
-    tagline: 'Pickup, a place to stay, food in the fridge and your admin started.',
-    includes: ['Everything in Essential Arrival', '7 nights in vetted student accommodation', 'Food & grocery starter pack (vegetarian, halal and other options)', 'Bank appointment booked, documents checked', 'IRD number application assistance', 'AT HOP card & public transport walkthrough', 'Auckland orientation walk'],
-    excludes: ['Long-term accommodation search', 'Airport pickup for family members']
+    tagline: 'A week to stay, your admin done and your room set up.',
+    includes: ['Everything in Essential Arrival', '7 nights in vetted accommodation', 'Accompanied bank & IRD appointments', 'Shopping trip (3 hours): bedding, kitchen basics, groceries', 'College / campus orientation (3 hours)'],
+    excludes: ['Daily meals (add the Welcome Box, or choose Premium Landing)']
   },
   {
-    id: 'premium', name: 'Premium Landing', price: 1199, days: 'Days 1–7',
-    for: 'When you want more comfort and a hand with everything.',
-    tagline: 'A nicer place to stay, and someone beside you for every appointment.',
-    includes: ['Everything in 7-Day Starter', 'Upgraded private room or studio for 7 nights', 'Accompanied bank & IRD appointments', 'Shopping trip: bedding, kitchen basics, winter layers', 'University / campus orientation', 'Long-term accommodation shortlist and 2 viewings', 'Priority WhatsApp line for 14 days'],
+    id: 'premium', name: 'Premium Landing', price: 1899, days: 'Days 1–7',
+    for: 'When you want your first week completely taken care of.',
+    tagline: 'Everything in the 7-Day Starter, plus a meal every day and the Welcome Box.',
+    includes: ['Everything in 7-Day Starter', 'One meal a day for 7 days (veg, non-veg or halal)', 'NZ Welcome Box waiting in your room'],
     excludes: ['Vehicle hire', 'Immigration advice (we don’t give it)']
-  },
-  {
-    id: 'family', name: 'Family Arrival', price: 1999, days: 'Days 1–7',
-    for: 'Families relocating together, with children to settle.',
-    tagline: 'A whole-family landing: home, school area, groceries and admin.',
-    includes: ['Meet & greet for up to 4 people, van transfer', '7 nights family accommodation', 'Family grocery pack', 'School-zone and neighbourhood orientation', 'Bank & IRD assistance for both adults', 'SIMs for the whole family', 'Long-term rental guidance'],
-    excludes: ['School enrolment decisions', 'Furniture or vehicle purchase']
-  },
-  {
-    id: 'settlement', name: '30-Day Settlement', price: 2499, days: 'Days 1–30',
-    for: 'Skilled migrants and anyone who wants a month of support.',
-    tagline: 'First week sorted, then a month of help finding your feet.',
-    includes: ['Everything in Premium Landing', 'Weekly check-in calls for 4 weeks', 'Utilities set-up guidance (power, internet)', 'Long-term accommodation search support until signed', 'Local services map: GP, pharmacy, groceries, places of worship', 'Job-search and NZ workplace orientation session', 'Community introductions'],
-    excludes: ['Guaranteed housing or employment outcomes']
   }
 ];
 
@@ -97,7 +90,7 @@ DV.milestones = [
 DV.faqs = [
   ['Who will meet me at the airport?', 'A DreamVoyagers arrival host with a named sign, your booking reference and a photo we send you in advance. We track your flight, so if it is delayed we are still there.'],
   ['Can my parents book and pay for me?', 'Yes. The booking form asks for the person paying and the person travelling separately. Both receive the confirmation and progress updates.'],
-  ['Can you open my bank account or get my IRD number?', 'No — and anyone who promises that should worry you. The bank decides on accounts and Inland Revenue issues IRD numbers. We book the appointment, check your documents, come with you (Premium and above) and explain the process.'],
+  ['Can you open my bank account or get my IRD number?', 'No — and anyone who promises that should worry you. The bank decides on accounts and Inland Revenue issues IRD numbers. We book the appointment, check your documents, come with you (3-Day Starter and above) and explain the process.'],
   ['Do you give immigration or visa advice?', 'No. We are not licensed immigration advisers and we do not advise on visas. We help with the practical things once your visa is sorted.'],
   ['What food options are in the starter pack?', 'Vegetarian, vegan, halal, Jain-friendly and standard packs. Tell us in the booking form and we will stock accordingly, including some familiar brands from home where we can.'],
   ['What if my flight changes?', 'Send us the new flight number on WhatsApp. We reschedule the pickup at no charge up to 24 hours before arrival.'],
@@ -107,7 +100,7 @@ DV.faqs = [
 
 /* Seed bookings for the demo admin */
 DV.seedBookings = () => [
-  { ref: 'DV-2026-00112', status: 'ready_for_arrival', pkg: 'starter', addons: ['welcomebox'], total: 778, created: '2026-10-21T09:12:00Z',
+  { ref: 'DV-2026-00112', status: 'ready_for_arrival', pkg: 'starter', addons: ['welcomebox'], total: 1578, created: '2026-10-21T09:12:00Z',
     booker: { name: 'Rajesh Sharma', email: 'rajesh.sharma@example.com', phone: '+91 98100 00000', country: 'India', sameAsTraveller: false },
     traveller: { name: 'Aarav Sharma', email: 'aarav.s@example.com', phone: '+91 98100 00001', nationality: 'India', dob: '2008-02-14', institution: 'AUT', diet: 'Vegetarian', access: '' },
     arrival: { date: '2026-11-04', flight: 'SQ285', time: '10:35', airport: 'AKL', notes: 'First time flying alone. Please send host photo to father too.' },
@@ -116,7 +109,7 @@ DV.seedBookings = () => [
     history: [['2026-10-21T09:12:00Z', 'pending_payment', 'system'], ['2026-10-21T09:14:00Z', 'paid', 'system'], ['2026-10-22T02:00:00Z', 'in_progress', 'Sarneela'], ['2026-10-27T05:30:00Z', 'services_confirmed', 'Sarneela'], ['2026-10-29T22:10:00Z', 'ready_for_arrival', 'Sarneela']],
     notes: [['2026-10-22T02:05:00Z', 'Sarneela', 'Room 14 at Empire Apartments confirmed, check-in from 2pm. Vegetarian pack ordered from Khyber Foods.'], ['2026-10-27T05:32:00Z', 'Sarneela', 'ANZ appointment Thu 6 Nov 10:30, Queen St branch. Reminded Aarav to bring passport + offer letter.']],
     emails: [['2026-10-21T09:14:10Z', 'Payment confirmation'], ['2026-10-21T09:14:12Z', 'Welcome & next steps'], ['2026-10-27T05:33:00Z', 'Accommodation confirmed'], ['2026-10-29T22:11:00Z', 'Pre-arrival instructions']] },
-  { ref: 'DV-2026-00113', status: 'in_progress', pkg: 'premium', addons: [], total: 1199, created: '2026-10-24T14:40:00Z',
+  { ref: 'DV-2026-00113', status: 'in_progress', pkg: 'premium', addons: [], total: 1899, created: '2026-10-24T14:40:00Z',
     booker: { name: 'Li Wei', email: 'liwei@example.cn', phone: '+86 139 0000 0000', country: 'China', sameAsTraveller: true },
     traveller: { name: 'Li Wei', email: 'liwei@example.cn', phone: '+86 139 0000 0000', nationality: 'China', dob: '2004-07-02', institution: 'University of Auckland', diet: 'No restrictions', access: '' },
     arrival: { date: '2026-11-09', flight: 'CA783', time: '14:20', airport: 'AKL', notes: '' },
@@ -125,7 +118,7 @@ DV.seedBookings = () => [
     history: [['2026-10-24T14:40:00Z', 'pending_payment', 'system'], ['2026-10-24T14:42:00Z', 'paid', 'system'], ['2026-10-25T01:00:00Z', 'in_progress', 'Sarneela']],
     notes: [['2026-10-25T01:02:00Z', 'Sarneela', 'Waiting on studio availability at UniLodge; fallback Quest Newmarket.']],
     emails: [['2026-10-24T14:42:10Z', 'Payment confirmation'], ['2026-10-24T14:42:12Z', 'Welcome & next steps']] },
-  { ref: 'DV-2026-00114', status: 'paid', pkg: 'family', addons: ['welcomebox', 'extra_pax'], total: 2123, created: '2026-10-27T18:05:00Z',
+  { ref: 'DV-2026-00114', status: 'paid', pkg: 'premium', addons: ['welcomebox', 'extra_pax'], total: 2023, created: '2026-10-27T18:05:00Z',
     booker: { name: 'Maria Santos', email: 'maria.santos@example.ph', phone: '+63 917 000 0000', country: 'Philippines', sameAsTraveller: true },
     traveller: { name: 'Maria Santos', email: 'maria.santos@example.ph', phone: '+63 917 000 0000', nationality: 'Philippines', dob: '1988-11-30', institution: 'Middlemore Hospital (employer)', diet: 'No restrictions', access: 'Travelling with two children (6 and 9) — booster seats please' },
     arrival: { date: '2026-11-15', flight: 'PR218', time: '13:55', airport: 'AKL', notes: 'Husband arrives two weeks later.' },
@@ -141,7 +134,7 @@ DV.seedBookings = () => [
     payment: { status: 'pending', id: 'cs_demo_abc', method: '', paidAt: null },
     milestones: { pickup: false, accommodation: false, sim: false, food: false, bank: false, ird: false },
     history: [['2026-10-29T06:30:00Z', 'pending_payment', 'system']], notes: [], emails: [['2026-10-29T06:30:05Z', 'Booking acknowledgement']] },
-  { ref: 'DV-2026-00109', status: 'completed', pkg: 'starter', addons: ['welcomebox'], total: 778, created: '2026-09-30T11:00:00Z',
+  { ref: 'DV-2026-00109', status: 'completed', pkg: 'starter', addons: ['welcomebox'], total: 1578, created: '2026-09-30T11:00:00Z',
     booker: { name: 'Kim Ji-ho', email: 'jiho.kim@example.kr', phone: '+82 10 0000 0000', country: 'South Korea', sameAsTraveller: true },
     traveller: { name: 'Kim Ji-ho', email: 'jiho.kim@example.kr', phone: '+82 10 0000 0000', nationality: 'South Korea', dob: '2003-09-09', institution: 'Massey University (Albany)', diet: 'No restrictions', access: '' },
     arrival: { date: '2026-10-12', flight: 'KE129', time: '09:50', airport: 'AKL', notes: '' },
